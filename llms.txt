@@ -13,6 +13,7 @@ OES here is not Open Enterprise Server (Novell, now OpenText), which shares the 
 - Website: {{ "/" | absolute_url }} — also in Russian ({{ "/ru/" | absolute_url }}) and Ukrainian ({{ "/uk/" | absolute_url }})
 - Source code: {{ site.repository_url }}
 - Download: {{ site.releases_url }} — Windows x64, Linux x64, macOS arm64
+- Demo: {{ site.demo_url }} — the demo application (trading, payroll, accounting) in a browser, on made-up data
 - Databases: Firebird (embedded, shipped) and PostgreSQL; ODBC
 - License: PolyForm Noncommercial 1.0.0 — source-available, not open source. Studying, evaluating (a business deciding whether to build on it included) and any noncommercial use are free; earning money with it needs a license.
 

@@ -12,6 +12,7 @@ image: /assets/img/studio-form-designer.png
 
 repository_url: https://github.com/open-enterprise-solutions/enterprise
 releases_url: https://github.com/open-enterprise-solutions/enterprise/releases/latest
+demo_url: https://35.194.14.78.sslip.io/fb_test_buh/
 telegram_url: https://t.me/open_es_channel
 
 # Search Console: put the code of the HTML-tag check here (content="…").

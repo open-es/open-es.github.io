@@ -4,6 +4,7 @@ en:
   short: Eng
   guide: Guide
   gallery: Gallery
+  demo: Demo
   download: Download
   source: Source code
   language: Language
@@ -26,6 +27,7 @@ ru:
   short: Рус
   guide: Руководство
   gallery: Галерея
+  demo: Демо
   download: Скачать
   source: Исходный код
   language: Язык
@@ -48,6 +50,7 @@ uk:
   short: Укр
   guide: Посібник
   gallery: Галерея
+  demo: Демо
   download: Завантажити
   source: Вихідний код
   language: Мова

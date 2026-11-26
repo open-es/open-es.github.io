@@ -63,6 +63,7 @@
     <nav class="primary" aria-label="OES">
       <a href="{{ guide_home.url | relative_url }}"{% if page.layout == "guide" %} aria-current="page"{% endif %}>{{ t.guide }}</a>
       <a href="{{ gallery.url | relative_url }}"{% if page.ref == "gallery" %} aria-current="page"{% endif %}>{{ t.gallery }}</a>
+      <a href="{{ site.demo_url }}">{{ t.demo }}</a>
       <a href="{{ site.releases_url }}">{{ t.download }}</a>
       <a href="{{ site.repository_url }}">GitHub</a>
     </nav>
