@@ -3,7 +3,7 @@ layout: default
 ref: gallery
 lang: en
 title: "Gallery"
-description: "Screenshots of OES: the studio's form designer, report composer, debugger and print templates; reports, a general ledger and list settings in the workspace; the same application in a browser."
+description: "Screenshots of OES: the studio's form designer, report composer, debugger and print templates; trial balances on two charts of accounts, lots by FIFO, a payroll register, a general ledger and list settings in the workspace; the same application in a browser."
 permalink: /gallery/
 body_class: gallery
 ---
@@ -56,7 +56,22 @@ body_class: gallery
   <div class="shots">
     <figure class="shot shot-main">
       <a href="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A trial balance report"></a>
-      <figcaption>A trial balance built by the report composer, grouped by company and account.</figcaption>
+      <figcaption>A trial balance on the Anglo-Saxon chart of accounts, built by the report composer, grouped by company and account.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-trial-balance-continental.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance-continental.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="A trial balance on the continental chart of accounts"></a>
+      <figcaption>The same books on the continental chart, where costs are kept by nature, beside the capital contributions. The closing balance agrees with the Anglo-Saxon one to the cent.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-lots-fifo-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/workspace-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1920" height="1032">
+        <img src="{{ '/assets/img/workspace-lots-fifo-light.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="A lots-on-hand report zoomed to 150%">
+      </picture></a>
+      <figcaption>Lots on hand by FIFO — warehouse, item, receipt — zoomed to 150%, in the light or the dark look, as your system is set.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-payroll-register.png' | relative_url }}"><img src="{{ '/assets/img/workspace-payroll-register.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="A payroll document and its payroll register"></a>
+      <figcaption>A payroll document beside its printed register: salary, bonus, sick pay, income tax and net pay for each employee.</figcaption>
     </figure>
     <figure class="shot">
       <a href="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}"><img src="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A general ledger grouped by account and dimension"></a>

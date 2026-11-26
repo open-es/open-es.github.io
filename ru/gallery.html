@@ -3,7 +3,7 @@ layout: default
 ref: gallery
 lang: ru
 title: "Галерея"
-description: "Снимки OES: конструктор форм, компоновщик отчётов, отладчик и шаблоны печатных форм в студии; отчёты, главная книга и настройки списков в рабочем месте; то же приложение в браузере."
+description: "Снимки OES: конструктор форм, компоновщик отчётов, отладчик и шаблоны печатных форм в студии; оборотно-сальдовые по двум планам счетов, партии по FIFO, расчётная ведомость, главная книга и настройки списков в рабочем месте; то же приложение в браузере."
 permalink: /ru/gallery/
 body_class: gallery
 ---
@@ -56,7 +56,22 @@ body_class: gallery
   <div class="shots">
     <figure class="shot shot-main">
       <a href="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдовая ведомость"></a>
-      <figcaption>Оборотно-сальдовая ведомость, построенная компоновщиком, с группировкой по организации и счёту.</figcaption>
+      <figcaption>Оборотно-сальдовая ведомость по англосаксонскому плану счетов, построенная компоновщиком, с группировкой по организации и счёту.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-trial-balance-continental.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance-continental.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="Оборотно-сальдовая ведомость по континентальному плану счетов"></a>
+      <figcaption>Те же книги по континентальному плану счетов, где затраты учитываются по элементам, — рядом с документами взноса в капитал. Конечное сальдо сходится с англосаксонским до цента.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-lots-fifo-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/workspace-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1920" height="1032">
+        <img src="{{ '/assets/img/workspace-lots-fifo-light.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="Отчёт об остатках партий в масштабе 150%">
+      </picture></a>
+      <figcaption>Остатки партий по FIFO — склад, товар, поступление — в масштабе 150%, в светлом или тёмном виде, как настроена ваша система.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-payroll-register.png' | relative_url }}"><img src="{{ '/assets/img/workspace-payroll-register.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="Документ начисления зарплаты и расчётная ведомость"></a>
+      <figcaption>Начисление зарплаты рядом со своей печатной ведомостью: оклад, премия, больничные, подоходный налог и сумма к выплате по каждому сотруднику.</figcaption>
     </figure>
     <figure class="shot">
       <a href="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}"><img src="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Главная книга с группировкой по счёту и аналитике"></a>
