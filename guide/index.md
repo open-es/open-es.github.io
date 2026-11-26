@@ -9,7 +9,7 @@ permalink: /guide/
 ---
 
 OES is a platform for building line-of-business applications: stock, accounting, payroll,
-sales. This wiki is the user's guide: what the platform is, how to install and build it, how
+sales. This is the user's guide: what the platform is, how to install and build it, how
 to make a first application, and how the parts fit together.
 
 ## Contents
