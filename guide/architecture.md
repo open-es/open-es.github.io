@@ -9,7 +9,7 @@ order: 11
 permalink: /guide/architecture/
 ---
 
-OES is written in C++20 on wxWidgets. It builds with MSVC on Windows, with GCC on Linux and with
+OpenES is written in C++20 on wxWidgets. It builds with MSVC on Windows, with GCC on Linux and with
 Clang on macOS, and CI runs the tests on all three. The full description is in
 [ARCHITECTURE.md](https://github.com/open-enterprise-solutions/enterprise/blob/develop/docs/ARCHITECTURE.md).
 

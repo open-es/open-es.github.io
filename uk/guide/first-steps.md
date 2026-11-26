@@ -3,7 +3,7 @@ layout: guide
 lang: uk
 ref: first-steps
 title: Перші кроки
-description: Невеликий складський застосунок в OES, від порожньої бази до звіту.
+description: Невеликий складський застосунок в OpenES, від порожньої бази до звіту.
 section: start
 order: 4
 permalink: /uk/guide/first-steps/

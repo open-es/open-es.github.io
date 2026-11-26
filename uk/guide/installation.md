@@ -3,7 +3,7 @@ layout: guide
 lang: uk
 ref: installation
 title: Встановлення
-description: Завантажте збірку OES для Windows, Linux або macOS і запустіть її.
+description: Завантажте збірку OpenES для Windows, Linux або macOS і запустіть її.
 section: start
 order: 2
 permalink: /uk/guide/installation/

@@ -3,7 +3,7 @@ layout: guide
 lang: ru
 ref: build-from-source
 title: Сборка из исходников
-description: Собрать OES самостоятельно на Windows, Linux или macOS.
+description: Собрать OpenES самостоятельно на Windows, Linux или macOS.
 section: start
 order: 3
 permalink: /ru/guide/build-from-source/

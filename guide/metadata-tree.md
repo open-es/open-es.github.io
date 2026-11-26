@@ -3,7 +3,7 @@ layout: guide
 lang: en
 ref: metadata-tree
 title: The metadata tree
-description: Every kind of object an OES application is made of.
+description: Every kind of object an OpenES application is made of.
 section: studio
 order: 6
 permalink: /guide/metadata-tree/

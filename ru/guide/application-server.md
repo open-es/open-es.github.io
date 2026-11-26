@@ -3,7 +3,7 @@ layout: guide
 lang: ru
 ref: application-server
 title: Сервер приложений
-description: "Обслуживание баз OES без окна: сервер приложений и его папка."
+description: "Обслуживание баз OpenES без окна: сервер приложений и его папка."
 section: running
 order: 10
 permalink: /ru/guide/application-server/

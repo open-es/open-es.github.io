@@ -3,7 +3,7 @@ layout: guide
 lang: ru
 ref: installation
 title: Установка
-description: Скачать сборку OES для Windows, Linux или macOS и запустить её.
+description: Скачать сборку OpenES для Windows, Linux или macOS и запустить её.
 section: start
 order: 2
 permalink: /ru/guide/installation/

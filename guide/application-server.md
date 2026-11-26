@@ -3,7 +3,7 @@ layout: guide
 lang: en
 ref: application-server
 title: Application server
-description: "Serving OES bases without a window: the application server and its folder."
+description: "Serving OpenES bases without a window: the application server and its folder."
 section: running
 order: 10
 permalink: /guide/application-server/

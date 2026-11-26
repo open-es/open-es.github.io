@@ -3,12 +3,12 @@ layout: guide
 lang: en
 ref: guide
 title: User's guide
-description: "The OES user's guide: installing a build, a first application step by step, the studio, metadata, forms, the language, queries and reports, the application server and the pitfalls."
+description: "The OpenES user's guide: installing a build, a first application step by step, the studio, metadata, forms, the language, queries and reports, the application server and the pitfalls."
 order: 0
 permalink: /guide/
 ---
 
-OES is a platform for building line-of-business applications: stock, accounting, payroll,
+OpenES is a platform for building line-of-business applications: stock, accounting, payroll,
 sales. This is the user's guide: what the platform is, how to install and build it, how
 to make a first application, and how the parts fit together.
 
@@ -16,7 +16,7 @@ to make a first application, and how the parts fit together.
 
 **Getting started**
 
-1. [Introduction](introduction/): what OES is, and the words used throughout
+1. [Introduction](introduction/): what OpenES is, and the words used throughout
 2. [Installation](installation/): download a build and start it
 3. [Building from source](build-from-source/): build it yourself on Windows, Linux or macOS
 4. [First steps](first-steps/): a small stock application, from an empty base to a report
@@ -52,7 +52,7 @@ to make a first application, and how the parts fit together.
 
 ## License
 
-OES is source-available, not open source, under
+OpenES is source-available, not open source, under
 [PolyForm Noncommercial 1.0.0](https://github.com/open-enterprise-solutions/enterprise/blob/develop/LICENSE.md).
 Studying it, evaluating it (including a business deciding whether to build on it) and any
 noncommercial use are free. Earning money from it needs a license.

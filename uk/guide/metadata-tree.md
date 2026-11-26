@@ -3,7 +3,7 @@ layout: guide
 lang: uk
 ref: metadata-tree
 title: Дерево метаданих
-description: Усі види об'єктів, з яких складається застосунок OES.
+description: Усі види об'єктів, з яких складається застосунок OpenES.
 section: studio
 order: 6
 permalink: /uk/guide/metadata-tree/

@@ -3,7 +3,7 @@ layout: guide
 lang: ru
 ref: first-steps
 title: Первые шаги
-description: Небольшое складское приложение в OES, от пустой базы до отчёта.
+description: Небольшое складское приложение в OpenES, от пустой базы до отчёта.
 section: start
 order: 4
 permalink: /ru/guide/first-steps/

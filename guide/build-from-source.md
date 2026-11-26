@@ -3,7 +3,7 @@ layout: guide
 lang: en
 ref: build-from-source
 title: Building from source
-description: Build OES yourself on Windows, Linux or macOS.
+description: Build OpenES yourself on Windows, Linux or macOS.
 section: start
 order: 3
 permalink: /guide/build-from-source/

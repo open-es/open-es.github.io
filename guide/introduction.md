@@ -3,15 +3,15 @@ layout: guide
 lang: en
 ref: introduction
 title: Introduction
-description: What OES is, and the words used throughout.
+description: What OpenES is, and the words used throughout.
 section: start
 order: 1
 permalink: /guide/introduction/
 ---
 
-## What OES is
+## What OpenES is
 
-OES is a platform for line-of-business applications. You do not write the application from
+OpenES is a platform for line-of-business applications. You do not write the application from
 scratch. You **describe** it, and the platform builds the rest from the description:
 
 | You describe | The platform makes |

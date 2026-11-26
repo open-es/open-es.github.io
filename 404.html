@@ -12,7 +12,7 @@ sitemap: false
     {%- for l in site.languages %}
     {%- assign h = site.pages | where: "ref", "home" | where: "lang", l | first %}
     {%- assign g = site.pages | where: "ref", "guide" | where: "lang", l | first %}
-    <li lang="{{ l }}"><a href="{{ h.url | relative_url }}">OES</a> · <a href="{{ g.url | relative_url }}">{{ site.data.i18n[l].guide }}</a> ({{ site.data.i18n[l].name }})</li>
+    <li lang="{{ l }}"><a href="{{ h.url | relative_url }}">OpenES</a> · <a href="{{ g.url | relative_url }}">{{ site.data.i18n[l].guide }}</a> ({{ site.data.i18n[l].name }})</li>
     {%- endfor %}
   </ul>
 </section>

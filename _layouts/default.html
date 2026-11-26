@@ -21,8 +21,8 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "OES",
-    "alternateName": ["Open Enterprise Solutions", "OES Enterprise"],
+    "name": "OpenES",
+    "alternateName": ["Open Enterprise Solutions", "OES"],
     "description": {{ page.description | jsonify }},
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Platform for accounting and ERP applications",
@@ -60,10 +60,10 @@
 <header class="masthead">
   <div class="masthead-in">
     <a class="brand" href="{{ home.url | relative_url }}">
-      <img src="{{ '/assets/img/logo.png' | relative_url }}" width="32" height="32" alt="OES">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" width="32" height="32" alt="OpenES">
       <span>Open Enterprise Solutions</span>
     </a>
-    <nav class="primary" aria-label="OES">
+    <nav class="primary" aria-label="OpenES">
       <a href="{{ guide_home.url | relative_url }}"{% if page.layout == "guide" %} aria-current="page"{% endif %}>{{ t.guide }}</a>
       <a href="{{ gallery.url | relative_url }}"{% if page.ref == "gallery" %} aria-current="page"{% endif %}>{{ t.gallery }}</a>
       <a href="{{ site.demo_url }}">{{ t.demo }}</a>

@@ -3,7 +3,7 @@ layout: guide
 lang: uk
 ref: application-server
 title: Сервер застосунків
-description: "Обслуговування баз OES без вікна: сервер застосунків і його папка."
+description: "Обслуговування баз OpenES без вікна: сервер застосунків і його папка."
 section: running
 order: 10
 permalink: /uk/guide/application-server/

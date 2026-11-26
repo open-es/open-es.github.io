@@ -3,7 +3,7 @@ layout: guide
 lang: uk
 ref: build-from-source
 title: Збирання з вихідного коду
-description: Зберіть OES самостійно на Windows, Linux або macOS.
+description: Зберіть OpenES самостійно на Windows, Linux або macOS.
 section: start
 order: 3
 permalink: /uk/guide/build-from-source/

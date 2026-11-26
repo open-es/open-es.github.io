@@ -9,7 +9,7 @@ order: 11
 permalink: /ru/guide/architecture/
 ---
 
-OES написана на C++20 с wxWidgets. Она собирается MSVC на Windows, GCC на Linux и
+OpenES написана на C++20 с wxWidgets. Она собирается MSVC на Windows, GCC на Linux и
 Clang на macOS, и CI прогоняет тесты на всех трёх. Полное описание — в
 [ARCHITECTURE.md](https://github.com/open-enterprise-solutions/enterprise/blob/develop/docs/ARCHITECTURE.md).
 

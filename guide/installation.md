@@ -3,7 +3,7 @@ layout: guide
 lang: en
 ref: installation
 title: Installation
-description: Download a build of OES for Windows, Linux or macOS and start it.
+description: Download a build of OpenES for Windows, Linux or macOS and start it.
 section: start
 order: 2
 permalink: /guide/installation/

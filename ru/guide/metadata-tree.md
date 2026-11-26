@@ -3,7 +3,7 @@ layout: guide
 lang: ru
 ref: metadata-tree
 title: Дерево метаданных
-description: Все виды объектов, из которых состоит приложение OES.
+description: Все виды объектов, из которых состоит приложение OpenES.
 section: studio
 order: 6
 permalink: /ru/guide/metadata-tree/

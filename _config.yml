@@ -1,7 +1,7 @@
-title: OES
+title: OpenES
 tagline: C++ platform for accounting and business applications
 description: >-
-  OES is a source-available C++20 platform for business applications — stock, accounting, payroll, sales:
+  OpenES is a source-available C++20 platform for business applications — stock, accounting, payroll, sales:
   metadata, a built-in language, a query language, a report composer, a studio, an application server,
   a web client and an MCP server for AI assistants.
 url: https://open-es.github.io

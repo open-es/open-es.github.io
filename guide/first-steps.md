@@ -3,7 +3,7 @@ layout: guide
 lang: en
 ref: first-steps
 title: First steps
-description: A small stock application in OES, from an empty base to a report.
+description: A small stock application in OpenES, from an empty base to a report.
 section: start
 order: 4
 permalink: /guide/first-steps/
