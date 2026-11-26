@@ -261,6 +261,10 @@ body.page-home {
 /* ---- home: sections ---- */
 
 .section { max-width: var(--wide); margin: 0 auto; padding: 4.5rem var(--gutter) 0; }
+/* a footnote under the page's last section, its mark (*) in the text above */
+.section.footnote { padding-top: 3rem; font-size: .875rem; color: var(--ink-2); }
+.section.footnote p { margin: 0; padding-top: .75rem; border-top: 1px solid var(--rule); max-width: 46rem; }
+.fn-ref { text-decoration: none; font-weight: 600; padding: 0 .1em; }
 .section > h2 {
   font: 600 clamp(1.6rem, 2.6vw, 2.1rem)/1.15 var(--serif);
   letter-spacing: -.01em;
