@@ -75,86 +75,27 @@ body_class: home
 
 <section class="section">
   <h2>Как это выглядит</h2>
-
-  <h3 class="shots-title">Студия: здесь приложение строят</h3>
-  <div class="shots">
-    <figure class="shot shot-main">
-      <a href="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}"><picture>
+  <div class="teaser">
+    <figure class="shot">
+      <a href="{{ '/ru/gallery/#studio' | relative_url }}"><picture>
         <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
-        <img src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="Форма панели в студии">
+        <img loading="lazy" src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="Форма панели в студии">
       </picture></a>
-      <figcaption>Форма панели: три таблицы привязаны к реквизитам обработки, кнопки — к её командам, справа — инспектор свойств. Светлый или тёмный вид — как настроена ваша система.</figcaption>
+      <figcaption>Студия</figcaption>
     </figure>
     <figure class="shot">
-      <a href="{{ '/assets/img/studio-report-composer.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-composer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Настройки компоновщика отчёта в студии"></a>
-      <figcaption>Компоновщик расчётной ведомости: строки сгруппированы по организации и сотруднику, колонки — по виду расчёта.</figcaption>
+      <a href="{{ '/ru/gallery/#workspace' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдовая ведомость"></a>
+      <figcaption>Рабочее место</figcaption>
     </figure>
     <figure class="shot">
-      <a href="{{ '/assets/img/studio-form-designer.png' | relative_url }}"><img src="{{ '/assets/img/studio-form-designer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Конструктор формы в студии"></a>
-      <figcaption>Форма документа: её элементы, реквизиты и команды.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/studio-print-template-light.png' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/studio-print-template-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1033">
-        <img src="{{ '/assets/img/studio-print-template-light.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Шаблон печатной формы в студии">
-      </picture></a>
-      <figcaption>Шаблон печатной формы: именованные области и параметры, которые заполняет код.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/studio-debugger-light.png' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/studio-debugger-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
-        <img src="{{ '/assets/img/studio-debugger-light.png' | relative_url }}" width="1919" height="1030" loading="lazy" alt="Отладчик остановлен в проведении документа">
-      </picture></a>
-      <figcaption>Проведение поступления товаров на точке останова: движения по складу и партиям, проводка по каждому плану счетов и значения в окне наблюдения.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/studio-report-query.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-query.png' | relative_url }}" width="1919" height="1034" loading="lazy" alt="Запрос отчёта в студии"></a>
-      <figcaption>Запрос, который читает компоновщик отчёта, — по остаткам регистра бухгалтерии.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}"><img src="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="Справочник языка в студии"></a>
-      <figcaption>Справочник языка прямо в студии: каждый тип, функция и конструкция — здесь LINQ.</figcaption>
-    </figure>
-  </div>
-
-  <h3 class="shots-title">Рабочее место: здесь в приложении работают</h3>
-  <div class="shots">
-    <figure class="shot shot-main">
-      <a href="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдовая ведомость"></a>
-      <figcaption>Оборотно-сальдовая ведомость, построенная компоновщиком, с группировкой по организации и счёту.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}"><img src="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Главная книга с группировкой по счёту и аналитике"></a>
-      <figcaption>Главная книга, сгруппированная по счёту дебета и его аналитике, — так задал пользователь в настройках списка.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/workspace-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/workspace-list-settings.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Настройки списка"></a>
-      <figcaption>Настройки списка: отбор, сортировка, группировка, условное оформление.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}"><img src="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Записи регистра бухгалтерии"></a>
-      <figcaption>Записи регистра бухгалтерии, найденные через контекстное меню.</figcaption>
-    </figure>
-  </div>
-
-  <h3 class="shots-title">То же приложение в браузере</h3>
-  <div class="shots">
-    <figure class="shot shot-main">
-      <a href="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}"><picture>
+      <a href="{{ '/ru/gallery/#browser' | relative_url }}"><picture>
         <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
         <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="Отчёт об остатках партий в браузере">
       </picture></a>
-      <figcaption>Остатки партий по FIFO с группировкой по складу и товару — в светлом или тёмном виде, как настроена ваша система.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/web-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/web-list-settings.png' | relative_url }}" width="1869" height="916" loading="lazy" alt="Настройки списка в браузере"></a>
-      <figcaption>Настройки списка: группировка по организации.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/assets/img/web-list-output.png' | relative_url }}"><img src="{{ '/assets/img/web-list-output.png' | relative_url }}" width="1867" height="914" loading="lazy" alt="Список, выведенный в табличный документ в браузере"></a>
-      <figcaption>Тот же список, выведенный в табличный документ, с группами.</figcaption>
+      <figcaption>В браузере</figcaption>
     </figure>
   </div>
+  <p class="teaser-more"><a href="{{ '/ru/gallery/' | relative_url }}">Все снимки — в галерее</a></p>
 </section>
 
 <section class="section">

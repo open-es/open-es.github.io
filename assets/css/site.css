@@ -13,6 +13,10 @@
   --red: #c33a2e;
   --link: #1a5aa6;
   --tint: #e6eefa;
+  --sun: #fee800;                     /* the logo's yellow */
+  --sun-ink: #13233a;                 /* what is written on it, in either look */
+  --sun-ring: rgba(112, 181, 222, .7); /* the logo's sky-blue ring */
+  --marker: rgba(254, 232, 0, .5);    /* a highlighter over a total */
   --tok-kw: #1a5aa6;
   --tok-str: #2d7550;
   --tok-num: #9a4a14;
@@ -43,6 +47,7 @@
     --red: #e8786a;
     --link: #8fc0f6;
     --tint: #1a3258;
+    --marker: rgba(254, 232, 0, .85);
     --tok-kw: #8bbaf2;
     --tok-str: #8fd0a8;
     --tok-num: #e8a56f;
@@ -70,6 +75,7 @@ img { max-width: 100%; height: auto; }
 a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .18em; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--sun); color: var(--sun-ink); }
 
 .skip { position: absolute; left: -999px; top: .5rem; }
 .skip:focus { left: var(--gutter); z-index: 10; background: var(--sheet); padding: .4rem .75rem; }
@@ -109,7 +115,7 @@ a:hover { text-decoration-thickness: 2px; }
 .langs > * { padding: 0 .65rem; text-decoration: none; color: var(--ink-2); }
 .langs > * + * { border-left: 1px solid var(--rule-strong); }
 .langs a:hover { color: var(--link); background: var(--tint); }
-.langs [aria-current] { background: var(--ink); color: var(--paper); }
+.langs [aria-current] { background: var(--sun); color: var(--sun-ink); font-weight: 600; }
 
 @media (max-width: 40em) {
   .brand span { display: none; }
@@ -153,7 +159,7 @@ body.page-home {
 }
 .btn:hover { border-color: var(--link); color: var(--link); }
 .btn-main { background: var(--link); border-color: var(--link); color: var(--paper); }
-.btn-main:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.btn-main:hover { background: var(--sun); border-color: var(--sun); color: var(--sun-ink); }
 .actions .note { margin: 0; font-size: .9375rem; color: var(--ink-2); }
 
 /* ---- home: the sheet ---- */
@@ -198,7 +204,18 @@ body.page-home {
 }
 .sheet-col:first-child .sheet-head,
 .sheet-col:first-child .sheet-body { padding-left: 2.25rem; }
-.sheet-head .step { font: 600 1.0625rem/1 var(--serif); color: var(--red); }
+/* the steps wear the logo: a yellow disc in a sky-blue ring */
+.sheet-head .step {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 0 2px var(--sun-ring);
+  color: var(--sun-ink);
+  font: 600 .875rem/1 var(--sans);
+}
 .sheet-body { padding: 0 1.25rem; font-size: .9375rem; line-height: var(--step); }
 .sheet pre {
   margin: 0;
@@ -219,7 +236,14 @@ body.page-home {
 .ledger th, .ledger td { height: var(--step); padding: 0 .4rem 0 0; line-height: calc(var(--step) - 1px); text-align: left; }
 .ledger th { font-size: .8125rem; font-weight: 600; color: var(--ink-2); }
 .ledger .num { text-align: right; padding-right: 0; }
-.ledger tfoot td { font-weight: 600; box-shadow: inset 0 1px 0 var(--ink); border-bottom: 3px double var(--red); }
+.ledger tfoot td {
+  font-weight: 600;
+  color: var(--sun-ink);
+  box-shadow: inset 0 1px 0 var(--ink);
+  border-bottom: 3px double var(--red);
+  /* the total, gone over with a highlighter */
+  background: linear-gradient(to bottom, transparent 4px, var(--marker) 4px, var(--marker) calc(100% - 2px), transparent calc(100% - 2px));
+}
 .sheet-caption { max-width: 46rem; margin: 1rem 0 0; color: var(--ink-2); font-size: .9375rem; }
 
 @media (max-width: 68em) {
@@ -251,6 +275,18 @@ body.page-home {
 .shot a { display: block; line-height: 0; border: 1px solid var(--rule-strong); background: var(--frame); }
 .shot figcaption { margin-top: .55rem; font-size: .875rem; line-height: 1.45; color: var(--ink-2); }
 @media (max-width: 52em) { .shots { grid-template-columns: minmax(0, 1fr); } }
+
+/* three screenshots on the home page, each leading into its group of the gallery */
+.teaser { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.teaser figcaption { font-size: .9375rem; font-weight: 600; color: var(--ink); }
+.teaser-more { margin: 1.25rem 0 0; font-weight: 600; }
+@media (max-width: 44em) { .teaser { grid-template-columns: minmax(0, 1fr); } }
+
+/* the gallery page */
+.page-title { font: 600 clamp(2rem, 3.6vw, 2.6rem)/1.1 var(--serif); letter-spacing: -.012em; margin: 0 0 .6rem; }
+.page-lead { max-width: 42rem; margin: 0 0 2.25rem; color: var(--ink-2); }
+.gallery > h2.shots-title { font: 600 1.6rem/1.2 var(--serif); margin: 3.25rem 0 1.25rem; scroll-margin-top: 1rem; }
+.gallery > .page-lead + h2.shots-title { margin-top: 0; }
 
 .inside { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2rem; margin: 0; }
 .inside > div { padding: .9rem 0 1.4rem; border-top: 1px solid var(--rule); }
@@ -288,6 +324,18 @@ body.page-home {
 .toc .n { color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .toc a:hover { color: var(--link); }
 .toc a[aria-current] { border-left-color: var(--red); font-weight: 600; }
+.toc a[aria-current] .n {
+  display: inline-grid;
+  place-items: center;
+  justify-self: start;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-left: -.15rem;
+  border-radius: 50%;
+  background: var(--sun);
+  color: var(--sun-ink);
+  font-size: .8125rem;
+}
 
 .doc { max-width: 44rem; }
 .doc h1 { font: 600 clamp(2rem, 3.6vw, 2.6rem)/1.1 var(--serif); letter-spacing: -.012em; margin: 0 0 1.5rem; }

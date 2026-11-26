@@ -3,6 +3,7 @@ en:
   name: English
   short: Eng
   guide: Guide
+  gallery: Gallery
   download: Download
   source: Source code
   language: Language
@@ -24,6 +25,7 @@ ru:
   name: Русский
   short: Рус
   guide: Руководство
+  gallery: Галерея
   download: Скачать
   source: Исходный код
   language: Язык
@@ -45,6 +47,7 @@ uk:
   name: Українська
   short: Укр
   guide: Посібник
+  gallery: Галерея
   download: Завантажити
   source: Вихідний код
   language: Мова

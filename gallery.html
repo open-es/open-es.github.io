@@ -1,0 +1,93 @@
+---
+layout: default
+ref: gallery
+lang: en
+title: "Gallery"
+description: "Screenshots of OES: the studio's form designer, report composer, debugger and print templates; reports, a general ledger and list settings in the workspace; the same application in a browser."
+permalink: /gallery/
+body_class: gallery
+---
+<section class="section gallery">
+  <h1 class="page-title">Gallery</h1>
+  <p class="page-lead">The studio, the workspace and the browser, on a demo application of trading, payroll and accounting.</p>
+
+  <h2 class="shots-title" id="studio">The studio, where an application is built</h2>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="A dashboard form in the studio">
+      </picture></a>
+      <figcaption>A dashboard's form: three tables bound to the data tool's attributes, its buttons to its commands, the inspector on the right — in the light or the dark look, as your system is set.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-report-composer.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-composer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="A report composer's settings in the studio"></a>
+      <figcaption>A payroll sheet's composer: rows grouped by company and employee, columns by calculation type.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-form-designer.png' | relative_url }}"><img src="{{ '/assets/img/studio-form-designer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="The studio's form designer"></a>
+      <figcaption>A document's form laid out: its elements, attributes and commands.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-print-template-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-print-template-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1033">
+        <img src="{{ '/assets/img/studio-print-template-light.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A print form's template in the studio">
+      </picture></a>
+      <figcaption>A print form's template: named areas, and parameters the code fills.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-debugger-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-debugger-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img src="{{ '/assets/img/studio-debugger-light.png' | relative_url }}" width="1919" height="1030" loading="lazy" alt="The debugger stopped in a document's posting">
+      </picture></a>
+      <figcaption>A goods receipt's posting stopped at a breakpoint: stock and lot movements, an entry in each chart of accounts, and the values in the watch.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-report-query.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-query.png' | relative_url }}" width="1919" height="1034" loading="lazy" alt="A report's query in the studio"></a>
+      <figcaption>The query a report's composer reads, over an accounting register's balance.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}"><img src="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="The language reference in the studio"></a>
+      <figcaption>The language reference inside the studio: every type, function and construct — here LINQ.</figcaption>
+    </figure>
+  </div>
+
+  <h2 class="shots-title" id="workspace">The workspace, where people work in it</h2>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A trial balance report"></a>
+      <figcaption>A trial balance built by the report composer, grouped by company and account.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}"><img src="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A general ledger grouped by account and dimension"></a>
+      <figcaption>A general ledger grouped by the debit account and its dimension, set by the user in the list's settings.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/workspace-list-settings.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="A list's settings"></a>
+      <figcaption>A list's settings: filter, sort, groups, conditional appearance.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}"><img src="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="An accounting register's records"></a>
+      <figcaption>An accounting register's records, searched from the context menu.</figcaption>
+    </figure>
+  </div>
+
+  <h2 class="shots-title" id="browser">The same application in a browser</h2>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
+        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="A lots-on-hand report in a browser">
+      </picture></a>
+      <figcaption>Lots on hand by FIFO, grouped by warehouse and item — in the light or the dark look, as your system is set.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/web-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/web-list-settings.png' | relative_url }}" width="1869" height="916" loading="lazy" alt="A list's settings in a browser"></a>
+      <figcaption>A list's settings, grouping by company.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/web-list-output.png' | relative_url }}"><img src="{{ '/assets/img/web-list-output.png' | relative_url }}" width="1867" height="914" loading="lazy" alt="A list put out to a spreadsheet in a browser"></a>
+      <figcaption>The same list put out to a spreadsheet, groups kept.</figcaption>
+    </figure>
+  </div>
+</section>
