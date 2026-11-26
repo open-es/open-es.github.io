@@ -15,9 +15,11 @@ releases_url: https://github.com/open-enterprise-solutions/enterprise/releases/l
 demo_url: https://35.194.14.78.sslip.io/fb_test_buh/
 telegram_url: https://t.me/open_es_channel
 
-# Search Console: the code of its HTML-tag check (content="…"); jekyll-seo-tag puts the tag on every page.
-webmaster_verifications:
-  google: "L6dUeknTbI9ESlZLn5YtUqlwk1JCjiaVBFyKDEGDJUU"
+# Search Console: the codes of its checks (content="…", or what follows "google-site-verification=");
+# each becomes a google-site-verification tag on every page.
+google_site_verification:
+  - L6dUeknTbI9ESlZLn5YtUqlwk1JCjiaVBFyKDEGDJUU
+  - eA9kM8xnKa_CKdgnlWNhvoAXt5--YhPiSlAFOOntVWE
 
 languages: [en, ru, uk]
 
