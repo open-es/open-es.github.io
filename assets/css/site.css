@@ -272,9 +272,14 @@ body.page-home {
 .shot picture, .shot img { display: block; width: 100%; height: auto; }
 .shot { margin: 0; }
 .shot-main { grid-column: 1 / -1; }
+/* after the full-width main shot, an odd count leaves the last one alone in its row: centre it */
+.shots > .shot:last-child:nth-child(even) { grid-column: 1 / -1; justify-self: center; width: calc(50% - .75rem); }
 .shot a { display: block; line-height: 0; border: 1px solid var(--rule-strong); background: var(--frame); }
 .shot figcaption { margin-top: .55rem; font-size: .875rem; line-height: 1.45; color: var(--ink-2); }
-@media (max-width: 52em) { .shots { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 52em) {
+  .shots { grid-template-columns: minmax(0, 1fr); }
+  .shots > .shot:last-child:nth-child(even) { width: 100%; }
+}
 
 /* three screenshots on the home page, each leading into its group of the gallery */
 .teaser { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
