@@ -1,0 +1,45 @@
+title: OES
+tagline: C++ platform for accounting and business applications
+description: >-
+  OES is a source-available C++20 platform for business applications — stock, accounting, payroll, sales:
+  metadata, a built-in language, a query language, a report composer, a studio, an application server,
+  a web client and an MCP server for AI assistants.
+url: https://open-es.github.io
+baseurl: ""
+locale: en_US
+logo: /assets/img/logo.png
+image: /assets/img/studio-form-designer.png
+
+repository_url: https://github.com/open-enterprise-solutions/enterprise
+releases_url: https://github.com/open-enterprise-solutions/enterprise/releases/latest
+telegram_url: https://t.me/open_es_channel
+
+# Search Console: put the code of the HTML-tag check here (content="…").
+# webmaster_verifications:
+#   google: ""
+
+languages: [en, ru, uk]
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+
+defaults:
+  - scope: { path: "" }
+    values: { locale: en_US }
+  - scope: { path: "ru" }
+    values: { locale: ru_RU }
+  - scope: { path: "uk" }
+    values: { locale: uk_UA }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

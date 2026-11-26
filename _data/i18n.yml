@@ -1,0 +1,64 @@
+# The site's own words, per language. A page's language is its front matter `lang`.
+en:
+  name: English
+  short: Eng
+  guide: Guide
+  download: Download
+  source: Source code
+  language: Language
+  contents: Contents
+  previous: Previous
+  next: Next
+  skip: Skip to the text
+  sections:
+    start: Getting started
+    studio: Working in the studio
+    running: Running it
+  footer_licence: Source-available under PolyForm Noncommercial 1.0.0.
+  releases: Releases
+  issues: Issues
+  telegram: Telegram channel
+  not_found: This page does not exist.
+  not_found_hint: The guide and the home page are below.
+ru:
+  name: Русский
+  short: Рус
+  guide: Руководство
+  download: Скачать
+  source: Исходный код
+  language: Язык
+  contents: Содержание
+  previous: Назад
+  next: Дальше
+  skip: К тексту
+  sections:
+    start: Начало
+    studio: Работа в студии
+    running: Запуск и эксплуатация
+  footer_licence: Исходный код открыт по лицензии PolyForm Noncommercial 1.0.0.
+  releases: Выпуски
+  issues: Вопросы и ошибки
+  telegram: Канал в Telegram
+  not_found: Такой страницы нет.
+  not_found_hint: Руководство и главная страница — ниже.
+uk:
+  name: Українська
+  short: Укр
+  guide: Посібник
+  download: Завантажити
+  source: Вихідний код
+  language: Мова
+  contents: Зміст
+  previous: Назад
+  next: Далі
+  skip: До тексту
+  sections:
+    start: Початок
+    studio: Робота в студії
+    running: Запуск і експлуатація
+  footer_licence: Вихідний код відкрито за ліцензією PolyForm Noncommercial 1.0.0.
+  releases: Випуски
+  issues: Питання та помилки
+  telegram: Канал у Telegram
+  not_found: Такої сторінки немає.
+  not_found_hint: Посібник і головна сторінка — нижче.

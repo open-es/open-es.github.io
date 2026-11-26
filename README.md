@@ -1,0 +1,18 @@
+# open-es.github.io
+
+The OES website: <https://open-es.github.io>. The platform itself lives in
+[open-enterprise-solutions/enterprise](https://github.com/open-enterprise-solutions/enterprise).
+
+GitHub Pages builds it with Jekyll from `main` — nothing to run locally.
+
+| Where | What |
+|---|---|
+| `index.html`, `ru/index.html`, `uk/index.html` | The home page, per language |
+| `guide/`, `ru/guide/`, `uk/guide/` | The user's guide (the wiki's pages), per language |
+| `_layouts/` | `default` — the page; `guide` — the contents and the previous/next links |
+| `_data/i18n.yml` | The site's own words per language |
+| `assets/css/site.css` | The look; `fonts.css` and `assets/fonts/` — IBM Plex, kept here (SIL OFL) |
+| `assets/img/` | Screenshots; a `-light` / `-dark` pair follows the reader's system theme |
+
+A page belongs to a language by its front matter `lang`, and to its translations by `ref`: the language
+switch and the `hreflang` links find the page with the same `ref` in the other language.

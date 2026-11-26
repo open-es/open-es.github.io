@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- assign lang = page.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign guide = site.pages | where: "lang", lang | where_exp: "p", "p.order != nil" | sort: "order" -%}
+{%- assign guide_home = guide | first -%}
+{%- assign sections = "start,studio,running" | split: "," -%}
+{%- assign i = 0 -%}
+{%- for p in guide -%}{%- if p.url == page.url -%}{%- assign i = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign prev = nil -%}
+{%- if i > 0 -%}{%- assign iprev = i | minus: 1 -%}{%- assign prev = guide[iprev] -%}{%- endif -%}
+{%- assign inext = i | plus: 1 -%}{%- assign next = guide[inext] -%}
+<div class="guide">
+  <details class="toc" id="toc">
+    <summary>{{ t.contents }}</summary>
+    <nav aria-label="{{ t.contents }}">
+      <a class="toc-home" href="{{ guide_home.url | relative_url }}"{% if page.url == guide_home.url %} aria-current="page"{% endif %}>{{ guide_home.title }}</a>
+      {%- for s in sections %}
+      <p class="toc-section">{{ t.sections[s] }}</p>
+      <ol>
+        {%- assign items = guide | where: "section", s %}
+        {%- for p in items %}
+        <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}><span class="n">{{ p.order }}</span>{{ p.title }}</a></li>
+        {%- endfor %}
+      </ol>
+      {%- endfor %}
+    </nav>
+  </details>
+  <script>if (matchMedia('(min-width: 60em)').matches) document.getElementById('toc').open = true;</script>
+  <article class="doc">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+    <nav class="pager" aria-label="{{ t.previous }} / {{ t.next }}">
+      {%- if prev %}
+      <a class="prev" href="{{ prev.url | relative_url }}" rel="prev"><small>{{ t.previous }}</small>{{ prev.title }}</a>
+      {%- endif %}
+      {%- if next %}
+      <a class="next" href="{{ next.url | relative_url }}" rel="next"><small>{{ t.next }}</small>{{ next.title }}</a>
+      {%- endif %}
+    </nav>
+  </article>
+</div>

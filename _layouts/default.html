@@ -1,0 +1,71 @@
+<!doctype html>
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign homes = site.pages | where: "ref", "home" -%}
+{%- assign home = homes | where: "lang", lang | first -%}
+{%- assign guide_home = site.pages | where: "ref", "guide" | where: "lang", lang | first -%}
+{%- assign alts = nil -%}
+{%- if page.ref -%}{%- assign alts = site.pages | where: "ref", page.ref -%}{%- endif %}
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  {%- seo %}
+  {%- if alts %}
+  {%- for a in alts %}
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">
+  {%- endfor %}
+  {%- assign en = alts | where: "lang", "en" | first %}
+  {%- if en %}
+  <link rel="alternate" hreflang="x-default" href="{{ en.url | absolute_url }}">
+  {%- endif %}
+  {%- endif %}
+  <link rel="icon" type="image/png" href="{{ '/assets/img/logo.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="{{ page.body_class | default: page.layout }}">
+<a class="skip" href="#text">{{ t.skip }}</a>
+<header class="masthead">
+  <div class="masthead-in">
+    <a class="brand" href="{{ home.url | relative_url }}">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" width="32" height="32" alt="OES">
+      <span>Open Enterprise Solutions</span>
+    </a>
+    <nav class="primary" aria-label="OES">
+      <a href="{{ guide_home.url | relative_url }}"{% if page.layout == "guide" %} aria-current="page"{% endif %}>{{ t.guide }}</a>
+      <a href="{{ site.releases_url }}">{{ t.download }}</a>
+      <a href="{{ site.repository_url }}">GitHub</a>
+    </nav>
+    <nav class="langs" aria-label="{{ t.language }}">
+      {%- for l in site.languages %}
+      {%- assign target = nil %}
+      {%- if alts %}{% assign target = alts | where: "lang", l | first %}{% endif %}
+      {%- unless target %}{% assign target = homes | where: "lang", l | first %}{% endunless %}
+      {%- if l == lang %}
+      <span lang="{{ l }}" title="{{ site.data.i18n[l].name }}" aria-current="true">{{ site.data.i18n[l].short }}</span>
+      {%- else %}
+      <a href="{{ target.url | relative_url }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ site.data.i18n[l].name }}">{{ site.data.i18n[l].short }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </nav>
+  </div>
+</header>
+<main id="text">
+{{ content }}
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <p class="foot-brand"><img src="{{ '/assets/img/logo.png' | relative_url }}" width="24" height="24" alt=""> Open Enterprise Solutions</p>
+    <ul>
+      <li><a href="{{ site.repository_url }}">GitHub</a></li>
+      <li><a href="{{ site.releases_url }}">{{ t.releases }}</a></li>
+      <li><a href="{{ site.repository_url }}/issues">{{ t.issues }}</a></li>
+      <li><a href="{{ site.telegram_url }}">{{ t.telegram }}</a></li>
+    </ul>
+    <p class="foot-legal"><a href="{{ site.repository_url }}/blob/develop/LICENSE.md">{{ t.footer_licence }}</a></p>
+  </div>
+</footer>
+</body>
+</html>

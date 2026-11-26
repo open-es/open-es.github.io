@@ -1,0 +1,18 @@
+---
+layout: default
+lang: en
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="lost">
+  <h1>{{ site.data.i18n.en.not_found }}</h1>
+  <p>{{ site.data.i18n.en.not_found_hint }}</p>
+  <ul>
+    {%- for l in site.languages %}
+    {%- assign h = site.pages | where: "ref", "home" | where: "lang", l | first %}
+    {%- assign g = site.pages | where: "ref", "guide" | where: "lang", l | first %}
+    <li lang="{{ l }}"><a href="{{ h.url | relative_url }}">OES</a> · <a href="{{ g.url | relative_url }}">{{ site.data.i18n[l].guide }}</a> ({{ site.data.i18n[l].name }})</li>
+    {%- endfor %}
+  </ul>
+</section>
