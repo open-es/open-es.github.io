@@ -1,0 +1,181 @@
+---
+layout: default
+ref: home
+lang: ru
+title: Платформа на C++ для учётных и бизнес-приложений
+description: OES — платформа на C++20 для бизнес-приложений: склад, бухгалтерия, зарплата, продажи. Метаданные, встроенный язык, запросы и компоновщик отчётов; студия, рабочее место, браузерный клиент, сервер приложений и встроенный MCP-сервер для ИИ-ассистентов. Исходный код доступен.
+permalink: /ru/
+body_class: home
+---
+<section class="hero">
+  <h1>Опишите бизнес. Проведите документы. Получите отчёты.</h1>
+  <p class="lead">OES — платформа для бизнес-приложений: склад, бухгалтерия, зарплата, продажи. Написана на C++20.
+    Бизнес описывается метаданными, его правила — на встроенном языке, данные читаются запросами и отчётами.
+    Таблицы, формы и отчёты платформа создаёт сама и перестраивает базу данных, когда описание меняется.</p>
+  <p class="more">Студия, где приложение строят, рабочее место и браузер, где в нём работают, сервер приложений —
+    и встроенный MCP-сервер: ИИ-ассистент строит и проверяет приложение через те же двери, что и разработчик.</p>
+  <div class="actions">
+    <a class="btn btn-main" href="{{ site.releases_url }}">Скачать</a>
+    <a class="btn" href="{{ '/ru/guide/first-steps/' | relative_url }}">Первые шаги</a>
+    <p class="note">Windows, Linux и macOS</p>
+  </div>
+</section>
+
+<figure class="sheet">
+  <div class="sheet-paper">
+    <div class="sheet-col">
+      <h2 class="sheet-head"><span class="step">1</span> Описать</h2>
+      <div class="sheet-body">
+        <ul class="tree">
+          <li><span class="kind">Справочник</span> Products
+            <ul><li>Unit</li></ul></li>
+          <li><span class="kind">Регистр накопления</span> Stock
+            <ul><li>Product <span class="kind">измерение</span></li><li>Quantity <span class="kind">ресурс</span></li></ul></li>
+          <li><span class="kind">Документ</span> Receipt
+            <ul><li>Goods <span class="kind">таблица</span></li><li>Product, Quantity</li></ul></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sheet-col">
+      <h2 class="sheet-head"><span class="step">2</span> Провести</h2>
+      <div class="sheet-body">
+<pre class="highlight"><code><span class="k">procedure</span> <span class="nf">Posting</span>(Cancel, PostingMode) {
+    <span class="k">foreach</span> (row <span class="k">in</span> Goods) {
+        <span class="k">var</span> rec = RegisterRecords.Stock.Add();
+        rec.RecordType = AccumulationRecordType.Receipt;
+        rec.Period     = Date;
+        rec.Product    = row.Product;
+        rec.Quantity   = row.Quantity;
+    }
+}</code></pre>
+      </div>
+    </div>
+    <div class="sheet-col">
+      <h2 class="sheet-head"><span class="step">3</span> Прочитать</h2>
+      <div class="sheet-body">
+<pre class="highlight"><code><span class="k">SELECT</span> B.Product, B.QuantityBalance
+<span class="k">FROM</span> AccumulationRegister.Stock.Balance(&amp;At)
+     <span class="k">AS</span> B</code></pre>
+        <table class="ledger">
+          <thead><tr><th>Товар</th><th class="num">Остаток</th></tr></thead>
+          <tbody>
+            <tr><td>Гвозди 50 мм</td><td class="num">1&nbsp;200</td></tr>
+            <tr><td>Шурупы 4×30</td><td class="num">850</td></tr>
+            <tr><td>Петли дверные</td><td class="num">64</td></tr>
+          </tbody>
+          <tfoot><tr><td>Итого</td><td class="num">2&nbsp;114</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <figcaption class="sheet-caption">Таблицы для Goods и Stock, форма поступления и список поступлений берутся из
+    метаданных — ни SQL, ни кода окон писать не нужно. <a href="{{ '/ru/guide/first-steps/' | relative_url }}">Первые шаги</a>
+    собирают это приложение примерно за пятнадцать минут.</figcaption>
+</figure>
+
+<section class="section">
+  <h2>Как это выглядит</h2>
+
+  <h3 class="shots-title">Студия: здесь приложение строят</h3>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="Форма панели в студии">
+      </picture></a>
+      <figcaption>Форма панели: три таблицы привязаны к реквизитам обработки, кнопки — к её командам, справа — инспектор свойств. Светлый или тёмный вид — как настроена ваша система.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-report-composer.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-composer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Настройки компоновщика отчёта в студии"></a>
+      <figcaption>Компоновщик расчётной ведомости: строки сгруппированы по организации и сотруднику, колонки — по виду расчёта.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-form-designer.png' | relative_url }}"><img src="{{ '/assets/img/studio-form-designer.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Конструктор формы в студии"></a>
+      <figcaption>Форма документа: её элементы, реквизиты и команды.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-print-template-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-print-template-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1033">
+        <img src="{{ '/assets/img/studio-print-template-light.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Шаблон печатной формы в студии">
+      </picture></a>
+      <figcaption>Шаблон печатной формы: именованные области и параметры, которые заполняет код.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-debugger-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-debugger-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img src="{{ '/assets/img/studio-debugger-light.png' | relative_url }}" width="1919" height="1030" loading="lazy" alt="Отладчик остановлен в проведении документа">
+      </picture></a>
+      <figcaption>Проведение поступления товаров на точке останова: движения по складу и партиям, проводка по каждому плану счетов и значения в окне наблюдения.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-report-query.png' | relative_url }}"><img src="{{ '/assets/img/studio-report-query.png' | relative_url }}" width="1919" height="1034" loading="lazy" alt="Запрос отчёта в студии"></a>
+      <figcaption>Запрос, который читает компоновщик отчёта, — по остаткам регистра бухгалтерии.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}"><img src="{{ '/assets/img/studio-syntax-helper.png' | relative_url }}" width="1920" height="1032" loading="lazy" alt="Справочник языка в студии"></a>
+      <figcaption>Справочник языка прямо в студии: каждый тип, функция и конструкция — здесь LINQ.</figcaption>
+    </figure>
+  </div>
+
+  <h3 class="shots-title">Рабочее место: здесь в приложении работают</h3>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдовая ведомость"></a>
+      <figcaption>Оборотно-сальдовая ведомость, построенная компоновщиком, с группировкой по организации и счёту.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}"><img src="{{ '/assets/img/workspace-ledger-grouping.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Главная книга с группировкой по счёту и аналитике"></a>
+      <figcaption>Главная книга, сгруппированная по счёту дебета и его аналитике, — так задал пользователь в настройках списка.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/workspace-list-settings.png' | relative_url }}" width="1919" height="1031" loading="lazy" alt="Настройки списка"></a>
+      <figcaption>Настройки списка: отбор, сортировка, группировка, условное оформление.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}"><img src="{{ '/assets/img/workspace-accounting-register.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Записи регистра бухгалтерии"></a>
+      <figcaption>Записи регистра бухгалтерии, найденные через контекстное меню.</figcaption>
+    </figure>
+  </div>
+
+  <h3 class="shots-title">То же приложение в браузере</h3>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
+        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="Отчёт об остатках партий в браузере">
+      </picture></a>
+      <figcaption>Остатки партий по FIFO с группировкой по складу и товару — в светлом или тёмном виде, как настроена ваша система.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/web-list-settings.png' | relative_url }}"><img src="{{ '/assets/img/web-list-settings.png' | relative_url }}" width="1869" height="916" loading="lazy" alt="Настройки списка в браузере"></a>
+      <figcaption>Настройки списка: группировка по организации.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/assets/img/web-list-output.png' | relative_url }}"><img src="{{ '/assets/img/web-list-output.png' | relative_url }}" width="1867" height="914" loading="lazy" alt="Список, выведенный в табличный документ в браузере"></a>
+      <figcaption>Тот же список, выведенный в табличный документ, с группами.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Что внутри</h2>
+  <dl class="inside">
+    <div><dt>Ассистент в работе</dt><dd>Встроенный MCP-сервер: ИИ-ассистент читает, строит и проверяет приложение через те же двери, что и разработчик, и каждый вызов попадает в журнал.</dd></div>
+    <div><dt>Регистры</dt><dd>Сведений, накопления, бухгалтерии — план счетов и двойная запись — и расчёта для зарплаты.</dd></div>
+    <div><dt>Язык запросов</dt><dd>SELECT по бизнес-объектам, остаткам и оборотам регистров. Выполняется как SQL на сервере или в памяти — с тем же ответом.</dd></div>
+    <div><dt>Компоновщик отчётов</dt><dd>Группировки, итоги, кросс-таблицы, расшифровка до записей и сохранённые настройки каждого пользователя. Печать и выгрузка в Excel и Word.</dd></div>
+    <div><dt>Язык</dt><dd>CES в стиле C или VES с ключевыми словами: один компилятор в байт-код, лямбды, исключения и LINQ.</dd></div>
+    <div><dt>Студия</dt><dd>Дерево метаданных, конструктор форм, редактор кода с подсказками, конструктор запросов, удалённый отладчик и панель git.</dd></div>
+    <div><dt>Права доступа</dt><dd>Права по ролям и ограничение доступа к записям — кодом в роли. При сомнении доступ закрыт.</dd></div>
+    <div><dt>Сервер и кластер</dt><dd>Свой серверный процесс на каждую базу; кластер перезапускает упавший, а остальные базы этого не замечают. Firebird и PostgreSQL.</dd></div>
+    <div><dt>Браузер</dt><dd>То же приложение в браузере, на компьютере и на телефоне. Сеанс держит сервер, клиент только рисует.</dd></div>
+  </dl>
+</section>
+
+<section class="section licence">
+  <h2>Лицензия</h2>
+  <p>Исходный код OES доступен, но это не открытое ПО: лицензия PolyForm Noncommercial 1.0.0. Изучение, оценка — в том
+    числе компанией, которая решает, строить ли на платформе, — и любое некоммерческое использование бесплатны. Чтобы
+    зарабатывать с её помощью, нужна лицензия.</p>
+  <p><a href="{{ site.repository_url }}/blob/develop/LICENSE.md">Лицензия и что она разрешает</a></p>
+</section>
