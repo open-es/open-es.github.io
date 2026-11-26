@@ -1,7 +1,9 @@
 /* OES site. The page is a bookkeeping sheet: blue ruling, blue-black ink, red ink for the margin and the total. */
 
 :root {
-  --paper: #f3f6fa;
+  --paper: #f4f8fe;
+  --grid: rgba(47, 110, 196, .085);
+  --glow: rgba(110, 175, 255, .38);
   --sheet: #ffffff;
   --ink: #13233a;
   --ink-2: #4a5a70;
@@ -10,7 +12,7 @@
   --rule-strong: #8fa8c6;
   --red: #c33a2e;
   --link: #1a5aa6;
-  --tint: #e8eef6;
+  --tint: #e6eefa;
   --tok-kw: #1a5aa6;
   --tok-str: #2d7550;
   --tok-num: #9a4a14;
@@ -29,16 +31,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0e1724;
-    --sheet: #132030;
-    --ink: #dde6f1;
-    --ink-2: #9db0c6;
-    --rule: #2a3c52;
-    --rule-faint: #1b2a3b;
-    --rule-strong: #43607f;
-    --red: #e3735f;
-    --link: #8bbaf2;
-    --tint: #18283a;
+    --paper: #0f1f38;
+    --grid: rgba(139, 186, 242, .07);
+    --glow: rgba(80, 145, 245, .42);
+    --sheet: #142a4a;
+    --ink: #e2eaf5;
+    --ink-2: #a3b6cd;
+    --rule: #2c4569;
+    --rule-faint: #1d3354;
+    --rule-strong: #4a6b9c;
+    --red: #e8786a;
+    --link: #8fc0f6;
+    --tint: #1a3258;
     --tok-kw: #8bbaf2;
     --tok-str: #8fd0a8;
     --tok-num: #e8a56f;
@@ -52,7 +56,12 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  /* squared paper: the ruling of an accounts book, across the whole page */
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--ink);
   font: 400 1.0625rem/1.6 var(--sans);
   text-rendering: optimizeLegibility;
@@ -109,6 +118,16 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---- home: the opening ---- */
 
+/* daylight over the top of the home page, above the squared paper */
+body.page-home {
+  background-image:
+    radial-gradient(64rem 34rem at 82% -6rem, var(--glow), transparent 72%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px;
+  background-repeat: no-repeat, repeat, repeat;
+}
+
 .hero {
   max-width: var(--wide);
   margin: 0 auto;
@@ -133,8 +152,8 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--ink);
 }
 .btn:hover { border-color: var(--link); color: var(--link); }
-.btn-main { background: var(--ink); color: var(--paper); }
-.btn-main:hover { background: var(--link); color: var(--paper); }
+.btn-main { background: var(--link); border-color: var(--link); color: var(--paper); }
+.btn-main:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .actions .note { margin: 0; font-size: .9375rem; color: var(--ink-2); }
 
 /* ---- home: the sheet ---- */
