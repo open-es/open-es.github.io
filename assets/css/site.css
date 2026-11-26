@@ -278,6 +278,7 @@ body.page-home {
 
 /* three screenshots on the home page, each leading into its group of the gallery */
 .teaser { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.teaser img { aspect-ratio: 1919 / 1030; object-fit: cover; object-position: left top; }
 .teaser figcaption { font-size: .9375rem; font-weight: 600; color: var(--ink); }
 .teaser-more { margin: 1.25rem 0 0; font-weight: 600; }
 @media (max-width: 44em) { .teaser { grid-template-columns: minmax(0, 1fr); } }
