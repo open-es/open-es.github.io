@@ -7,7 +7,7 @@ sitemap: false
 {%- capture to_guide %}]({{ "/guide/" | absolute_url }}{% endcapture -%}
 # OpenES (Open Enterprise Solutions) — the user's guide
 
-> OpenES is a source-available platform for business applications — stock, accounting, payroll, sales — written in C++20: metadata, a built-in language, a query language and a report composer; a studio, a workspace, a browser client, an application server and a built-in MCP server for AI assistants. Not to be confused with Open Enterprise Server (Novell, now OpenText).
+> OpenES is a source-available low-code platform for ERP and accounting applications — stock, accounting, payroll, sales — written in C++20: metadata, a built-in language, a query language and a report composer; a studio, a workspace, a browser client, an application server and a built-in MCP server for AI assistants. Not to be confused with Open Enterprise Server (Novell, now OpenText).
 
 The guide below is the one at {{ "/guide/" | absolute_url }}, page after page. Source code: {{ site.repository_url }}
 {% for p in guide %}

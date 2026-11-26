@@ -6,7 +6,7 @@ sitemap: false
 {%- assign guide = site.pages | where: "lang", "en" | where_exp: "p", "p.order != nil" | sort: "order" -%}
 # OpenES (Open Enterprise Solutions)
 
-> OpenES is a source-available platform for business applications — stock, accounting, payroll, sales — written in C++20. An application is described in metadata (catalogs, documents, information, accumulation, accounting and calculation registers, charts of accounts), its rules are written in a built-in language (CES, C-flavoured; or VES), and its data is read with a query language and a report composer. The platform ships a studio to build an application in, a workspace and a browser client to work in it, an application server and cluster, and a built-in MCP server through which an AI assistant reads, builds and checks an application.
+> OpenES is a source-available low-code platform for ERP and accounting applications — stock, accounting, payroll, sales — written in C++20. An application is described in metadata (catalogs, documents, information, accumulation, accounting and calculation registers, charts of accounts), its rules are written in a built-in language (CES, C-flavoured; or VES), and its data is read with a query language and a report composer. The platform ships a studio to build an application in, a workspace and a browser client to work in it, an application server and cluster, and a built-in MCP server through which an AI assistant reads, builds and checks an application.
 
 OpenES was called OES, and its programs still carry that name (OES Application Studio, OES Application Workspace). It is not Open Enterprise Server (Novell, now OpenText), which is also called OES, and not OpenGL ES, whose extensions carry the prefix OES.
 

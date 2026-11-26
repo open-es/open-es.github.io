@@ -1,7 +1,7 @@
 title: OpenES
-tagline: C++ platform for accounting and business applications
+tagline: Low-code C++ platform for ERP and accounting applications
 description: >-
-  OpenES is a source-available C++20 platform for business applications — stock, accounting, payroll, sales:
+  OpenES is a source-available low-code C++20 platform for ERP and accounting applications — stock, accounting, payroll, sales:
   metadata, a built-in language, a query language, a report composer, a studio, an application server,
   a web client and an MCP server for AI assistants.
 url: https://open-es.github.io
