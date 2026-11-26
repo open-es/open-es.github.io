@@ -12,6 +12,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   {%- seo %}
+  {%- if page.ref == "home" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OES",
+    "alternateName": ["Open Enterprise Solutions", "OES Enterprise"],
+    "description": {{ page.description | jsonify }},
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Platform for accounting and ERP applications",
+    "operatingSystem": "Windows, Linux, macOS",
+    "inLanguage": ["en", "ru", "uk"],
+    "url": {{ page.url | absolute_url | jsonify }},
+    "downloadUrl": {{ site.releases_url | jsonify }},
+    "screenshot": {{ "/assets/img/studio-dashboard-light.png" | absolute_url | jsonify }},
+    "license": "https://polyformproject.org/licenses/noncommercial/1.0.0/",
+    "sameAs": [{{ site.repository_url | jsonify }}, {{ site.telegram_url | jsonify }}],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Open Enterprise Solutions",
+      "url": {{ "/" | absolute_url | jsonify }},
+      "logo": {{ "/assets/img/logo.png" | absolute_url | jsonify }}
+    }
+  }
+  </script>
+  {%- endif %}
   {%- if alts %}
   {%- for a in alts %}
   <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">

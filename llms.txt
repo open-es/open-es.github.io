@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+{%- assign guide = site.pages | where: "lang", "en" | where_exp: "p", "p.order != nil" | sort: "order" -%}
+# OES (Open Enterprise Solutions)
+
+> OES is a source-available platform for business applications — stock, accounting, payroll, sales — written in C++20. An application is described in metadata (catalogs, documents, information, accumulation, accounting and calculation registers, charts of accounts), its rules are written in a built-in language (CES, C-flavoured; or VES), and its data is read with a query language and a report composer. The platform ships a studio to build an application in, a workspace and a browser client to work in it, an application server and cluster, and a built-in MCP server through which an AI assistant reads, builds and checks an application.
+
+OES here is not Open Enterprise Server (Novell, now OpenText), which shares the abbreviation.
+
+- Website: {{ "/" | absolute_url }} — also in Russian ({{ "/ru/" | absolute_url }}) and Ukrainian ({{ "/uk/" | absolute_url }})
+- Source code: {{ site.repository_url }}
+- Download: {{ site.releases_url }} — Windows x64, Linux x64, macOS arm64
+- Databases: Firebird (embedded, shipped) and PostgreSQL; ODBC
+- License: PolyForm Noncommercial 1.0.0 — source-available, not open source. Studying, evaluating (a business deciding whether to build on it included) and any noncommercial use are free; earning money with it needs a license.
+
+## User's guide
+
+{% for p in guide %}- [{{ p.title }}]({{ p.url | absolute_url }}): {{ p.description }}
+{% endfor %}
+## For an assistant building on OES
+
+- [Building an application with an assistant]({{ site.repository_url }}/blob/develop/docs/public/ai-quickstart.md): connecting an assistant to the studio over MCP
+- [Context for an assistant that writes metadata and scripts]({{ site.repository_url }}/blob/develop/docs/ai-context.md)
+- [Design documents]({{ site.repository_url }}/blob/develop/docs/public/README.md): how a subsystem works, what it guarantees and where it stops
+
+## Optional
+
+- [The whole guide in one file]({{ "/llms-full.txt" | absolute_url }})
+- [Release notes]({{ site.repository_url }}/tree/develop/docs/release-notes)
+- [Architecture]({{ site.repository_url }}/blob/develop/docs/ARCHITECTURE.md): the system, directory by directory

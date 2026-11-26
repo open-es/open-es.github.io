@@ -1,0 +1,52 @@
+name: IndexNow
+
+# Once a push to main is built into the site, tell the search engines that take IndexNow
+# (Bing, Yandex, Seznam, Naver, Yep - through api.indexnow.org) which pages the site has.
+# Google does not take IndexNow; it reads the sitemap. The key is the file at the site's root.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Wait for the site to be built from this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 60); do
+            read -r status commit < <(curl -fsS -H "Authorization: Bearer $GH_TOKEN" \
+              "https://api.github.com/repos/$GITHUB_REPOSITORY/pages/builds/latest" | jq -r '"\(.status) \(.commit)"')
+            echo "build: $status $commit"
+            if [ "$commit" = "$GITHUB_SHA" ] && [ "$status" = "built" ]; then exit 0; fi
+            if [ "$commit" = "$GITHUB_SHA" ] && [ "$status" = "errored" ]; then echo "The site's build failed."; exit 1; fi
+            sleep 10
+          done
+          echo "The site was not built from $GITHUB_SHA within ten minutes."
+          exit 1
+
+      - name: Submit the sitemap's pages
+        run: |
+          host="$GITHUB_REPOSITORY_OWNER.github.io"
+          key="c43aa81fd37dc2c00ca2cee109771da1"
+          curl -fsS "https://$host/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' > urls.txt
+          echo "$(wc -l < urls.txt) pages"
+          jq -n --arg host "$host" --arg key "$key" --arg loc "https://$host/$key.txt" --rawfile urls urls.txt \
+            '{host: $host, key: $key, keyLocation: $loc, urlList: ($urls | split("\n") | map(select(length > 0)))}' > body.json
+          code=$(curl -sS -o answer.txt -w '%{http_code}' -X POST \
+            -H 'Content-Type: application/json; charset=utf-8' --data @body.json https://api.indexnow.org/indexnow)
+          echo "IndexNow answered $code"
+          cat answer.txt
+          case "$code" in 200|202) ;; *) exit 1 ;; esac
