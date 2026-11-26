@@ -119,7 +119,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 @media (max-width: 40em) {
   .brand span { display: none; }
-  .primary { gap: 1rem; }
+  .primary { flex-wrap: wrap; gap: .35rem 1rem; margin-left: 0; }
 }
 
 /* ---- home: the opening ---- */
