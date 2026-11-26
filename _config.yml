@@ -16,8 +16,9 @@ demo_url: https://35.194.14.78.sslip.io/fb_test_buh/
 telegram_url: https://t.me/open_es_channel
 
 # Search Console: the codes of its checks (content="…", or what follows "google-site-verification=");
-# each becomes a google-site-verification tag on every page.
-google_site_verification:
+# each becomes a google-site-verification tag on every page. Not "google_site_verification": jekyll-seo-tag
+# reads that old key itself and glues a list into one tag.
+google_verifications:
   - L6dUeknTbI9ESlZLn5YtUqlwk1JCjiaVBFyKDEGDJUU
   - eA9kM8xnKa_CKdgnlWNhvoAXt5--YhPiSlAFOOntVWE
 
