@@ -203,9 +203,16 @@ a:hover { text-decoration-thickness: 2px; }
 .gain h3 { font: 600 1.25rem/1.3 var(--serif); margin: 0 0 .5rem; }
 .gain ul { margin: 0; padding-left: 1.1rem; line-height: 1.55; }
 .gain li + li { margin-top: .4rem; }
+/* three in a row: what a decision gives, said for everyone, and under a rule how it is done, for engineers */
+.gains.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gains.three .gain { display: flex; flex-direction: column; }
+.gains.three .eng { margin-top: auto; }
+.gain p { margin: 0 0 .9rem; line-height: 1.55; }
+.gain .eng { margin: 0; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .875rem; line-height: 1.5; color: var(--ink-2); }
+.gain .eng b { color: var(--ink); }
 /* the margin's red double rule beside the sentence that answers "what if it does something wrong" */
 .assure { max-width: 46rem; margin: 1.75rem 0 0; padding-left: 1rem; border-left: 3px double var(--red); }
-@media (max-width: 52em) { .gains { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 52em) { .gains, .gains.three { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---- home: the sheet ---- */
 

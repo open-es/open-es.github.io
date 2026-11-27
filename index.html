@@ -172,6 +172,42 @@ body_class: home
 </section>
 
 <section class="section">
+  <h2>Why OpenES is built this way</h2>
+  <p class="section-lead">OpenES is written in C++ as one whole system, from storing the data to the screen. Here is
+    what that gives; under each point, how it is done, for engineers.</p>
+  <div class="gains three">
+    <div class="gain">
+      <h3>One meaning from the database to the screen</h3>
+      <p>A sum in a report is the same sum as in the database: no chain of different programs recalculates or rewrites
+        it on the way, and cents are not lost to rounding. So figures do not drift apart, and the system does not slide
+        from version to version.</p>
+      <p class="eng"><b>For engineers.</b> One core in C++, from storage to the form: a number (exact decimal), a date, a
+        string and a reference mean the same on the server, in the client and in the protocol; a query becomes SQL in
+        the platform, in one place; the client only draws.</p>
+    </div>
+    <div class="gain">
+      <h3>Its own where the figures rest</h3>
+      <p>The language, the queries, the calculations and the storage format — everything your data rests on — the
+        platform makes itself. Proven libraries for the network, the windows and PDF it takes ready-made, but keeps
+        inside itself. So in ten years it will start just as it does today.</p>
+      <p class="eng"><b>For engineers.</b> No .NET, Java, Node or Python is needed. The compiler and bytecode, the query
+        engine, the protocol and the storage format are its own; ASIO, Mbed TLS, expat, libharu, lunasvg and its own
+        branch of wxWidgets are submodules in the source tree; the Firebird engine ships in the package.</p>
+    </div>
+    <div class="gain">
+      <h3>Runs everywhere</h3>
+      <p>Windows, Linux, macOS — and a browser, a phone's too. One and the same application, without a separate version
+        for each system.</p>
+      <p class="eng"><b>For engineers.</b> One code base builds with MSVC, GCC and Apple Clang (Windows x64, Linux x64,
+        macOS arm64) and passes the same tests; the browser client is the same session on the server.</p>
+    </div>
+  </div>
+  <p class="assure">It is not an end in itself — the class of the task asks for it: accounting has to give the same
+    figures for years, on any machine. Engineers call such a build a vertically integrated stack: from storing the data
+    to the screen, one system, not a set of other people's products stitched together.</p>
+</section>
+
+<section class="section">
   <h2>For developers</h2>
   <p class="section-lead">Under the assistant is an ordinary platform in C++20, and whatever it does can be done by hand.
     You describe the business in metadata, write its rules in a built-in language and read its data with queries and
@@ -242,16 +278,6 @@ body_class: home
     <div><dt>Server and cluster</dt><dd>A server process per base; the cluster restarts one that falls, and the other bases do not notice. Firebird and PostgreSQL.</dd></div>
     <div><dt>Browser</dt><dd>The same application in a browser, on a desktop and on a phone. The server holds the session; the client only draws.</dd></div>
   </dl>
-
-  <h3 class="sub">Why C++, and everything its own</h3>
-  <p class="section-lead">An accounting system lives for decades — longer than fashionable frameworks. So OpenES stands
-    on no one else's runtime: it needs no .NET, no Java, no Node, no Python. The language's compiler and its bytecode, the
-    query engine, the network protocol, the storage format, exact decimal arithmetic — all its own, in one source tree;
-    the interface runs on its own branch of wxWidgets in that same tree, and the little that is third-party lives there
-    too and ships in the package. One code base builds with MSVC, GCC and Apple Clang and passes the same tests on
-    Windows, Linux and macOS.</p>
-  <p class="section-lead">The reckoning is simple: a program that has everything of its own will start in ten years just
-    as it does today — it does not need anyone else to keep its foundation alive.</p>
 </section>
 
 <section class="section licence">
