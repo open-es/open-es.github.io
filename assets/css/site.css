@@ -208,11 +208,30 @@ a:hover { text-decoration-thickness: 2px; }
 .gains.three .gain { display: flex; flex-direction: column; }
 .gains.three .eng { margin-top: auto; }
 .gain p { margin: 0 0 .9rem; line-height: 1.55; }
-.gain .eng { margin: 0; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .875rem; line-height: 1.5; color: var(--ink-2); }
-.gain .eng b { color: var(--ink); }
+.gain .eng, .path .eng { margin: 0; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .875rem; line-height: 1.5; color: var(--ink-2); }
+.gain .eng b, .path .eng b { color: var(--ink); }
+.path .eng code { font: 400 .9em/1 var(--mono); }
 /* the margin's red double rule beside the sentence that answers "what if it does something wrong" */
 .assure { max-width: 46rem; margin: 1.75rem 0 0; padding-left: 1rem; border-left: 3px double var(--red); }
 @media (max-width: 52em) { .gains, .gains.three { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- home: the way up — alone, together, a server, a cluster; the same application on every step ---- */
+
+.path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.path > li {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+}
+.path h3 { display: flex; align-items: center; gap: .55rem; font: 600 1.1875rem/1.3 var(--serif); margin: 0 0 .6rem; }
+.path p { margin: 0 0 .9rem; line-height: 1.55; }
+.path .eng { margin-top: auto; }
+.path .step { flex: none; }
+@media (max-width: 68em) { .path { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 44em) { .path { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---- home: the sheet ---- */
 
@@ -260,7 +279,8 @@ a:hover { text-decoration-thickness: 2px; }
 .sheet-col:first-child .sheet-head,
 .sheet-col:first-child .sheet-body { padding-left: 2.25rem; }
 /* the steps wear the logo: a yellow disc in a sky-blue ring */
-.sheet-head .step {
+.sheet-head .step,
+.path .step {
   display: inline-grid;
   place-items: center;
   width: 1.5rem;

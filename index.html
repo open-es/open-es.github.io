@@ -136,14 +136,47 @@ body_class: home
       price at a date (<code>SliceLast</code>) and the actual period of an accrual (<code>ActualActionPeriod</code>).
       Groupings, totals and drill-down a user then does with the mouse, in the report composer.</figcaption>
   </figure>
+</section>
 
-  <h3 class="sub">Runs on your own computer</h3>
-  <p class="section-lead">Download the archive for Windows, Linux or macOS and unpack it: the database engine is inside,
-    there is no server to install. Add a folder on disk in the launcher, and the base is ready. A file base is enough to
-    develop in and for a small office; a team takes PostgreSQL and the application server.
-    <a href="{{ '/guide/installation/' | relative_url }}">Installation</a></p>
-  <p class="section-lead">Everything above can be seen first in the <a href="{{ site.demo_url }}">demo</a>: trading,
-    payroll and accounting on made-up data, right in a browser.</p>
+<section class="section">
+  <h2>Grows with you</h2>
+  <p class="section-lead">You can start alone, on your own laptop, and grow without moving to another system: the same
+    application runs on one computer and on a cluster of servers.</p>
+  <ol class="path">
+    <li>
+      <h3><span class="step">1</span> You learn it yourself</h3>
+      <p>Download the archive, unpack it and add a folder in the launcher — the base is ready. Look at the
+        <a href="{{ site.demo_url }}">demo</a>: trading, payroll and accounting on made-up data, right in a browser. Go
+        through <a href="{{ '/guide/first-steps/' | relative_url }}">First steps</a> and build your first application —
+        yourself or with the assistant.</p>
+      <p class="eng"><b>For engineers.</b> A file base: the Firebird engine is in the package, no server needed;
+        Windows, Linux, macOS. <a href="{{ '/guide/installation/' | relative_url }}">Installation</a></p>
+    </li>
+    <li>
+      <h3><span class="step">2</span> You work together</h3>
+      <p>Several people work in one base, each with an account and a role, rights down to single records. A small office
+        does with the same file base.</p>
+      <p class="eng"><b>For engineers.</b> Roles, and row-level security written as code in the role; programs share a
+        file base among themselves.</p>
+    </li>
+    <li>
+      <h3><span class="step">3</span> You add a server</h3>
+      <p>Install the application server and PostgreSQL, and people work with the base from the office, from home, in a
+        browser and on a phone. The server runs as a Windows service or under systemd.</p>
+      <p class="eng"><b>For engineers.</b> <code>appcluster</code> holds one port for all the bases, each base in its own
+        <code>appserver</code> process; TLS with a certificate; the web server publishes a base at
+        <code>https://server/base/</code>. <a href="{{ '/guide/application-server/' | relative_url }}">Application server</a></p>
+    </li>
+    <li>
+      <h3><span class="step">4</span> You grow</h3>
+      <p>More bases and people — more servers: several servers can serve one base at once. A failure in one base does
+        not touch the others, and a fallen server comes back by itself.</p>
+      <p class="eng"><b>For engineers.</b> <code>Processes=N</code> in <code>server.conf</code> — N servers on a base;
+        they share sessions, locks and scheduled jobs through the base, and a job runs once for all of them.</p>
+    </li>
+  </ol>
+  <p class="assure">At every step the application stays the same: forms, reports and rules are not rewritten for the
+    next one.</p>
 </section>
 
 <section class="section">
