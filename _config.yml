@@ -42,6 +42,9 @@ defaults:
     values: { locale: ru_RU }
   - scope: { path: "uk" }
     values: { locale: uk_UA }
+  # Yandex Webmaster's check file: stays at the root (Yandex re-checks it), kept out of the sitemap
+  - scope: { path: "yandex_ee19758c677ce1f9.html" }
+    values: { sitemap: false }
 
 exclude:
   - README.md
