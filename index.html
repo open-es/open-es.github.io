@@ -8,39 +8,121 @@ permalink: /
 body_class: home
 ---
 <section class="hero">
-  <h1>Describe a business. Post its documents. Read its books.</h1>
-  <p class="lead">OpenES is a platform for business applications<a class="fn-ref" href="#fn-erp" aria-label="Note">*</a> — stock, accounting, payroll, sales — written in C++20.
-    You describe the business in metadata, write its rules in a built-in language and read its data with queries
-    and reports. The platform makes the tables, the forms and the reports, and keeps the database in step as the
-    description changes.</p>
-  <p class="more">A studio to build in, a workspace and a browser to work in, an application server — and a built-in
-    MCP server, so an AI assistant builds and checks an application through the same doors as the developer.</p>
-  <div class="actions">
-    <a class="btn btn-main" href="{{ site.releases_url }}">Download</a>
-    <a class="btn" href="{{ site.demo_url }}">Open the demo</a>
-    <a class="btn" href="{{ '/guide/first-steps/' | relative_url }}">First steps</a>
-    <p class="note">Windows, Linux and macOS; the demo needs only a browser</p>
+  <div class="hero-text">
+    <h1>Know the books? Change the system yourself.</h1>
+    <p class="lead">OpenES is a platform for business applications<a class="fn-ref" href="#fn-erp" aria-label="Note">*</a> — stock, accounting, payroll, sales.
+      An AI assistant connects to it directly: tell it in plain words what to keep and what to see, and it builds the
+      catalogs, the documents, the postings and the reports. No specification for a programmer, and no waiting in their queue.</p>
+    <p class="more">You check the result the way you always have: a posted document, a trial balance, a printed form.</p>
+    <div class="actions">
+      <a class="btn btn-main" href="{{ site.demo_url }}">Open the demo</a>
+      <a class="btn" href="{{ site.releases_url }}">Download</a>
+      <a class="btn" href="{{ '/guide/first-steps/' | relative_url }}">First steps</a>
+      <p class="note">The demo opens in a browser, nothing to install. The platform runs on Windows, Linux and macOS.</p>
+    </div>
   </div>
+
+  <figure class="talk">
+    <div class="talk-paper">
+      <p class="talk-head">The assistant in the studio</p>
+      <p class="talk-ask">Build an application for a small service company: clients, services with a price, an order
+        that lists services, and sales by client and service. Apply it, post three orders, and show sales by month.</p>
+      <ul class="talk-done">
+        <li>Catalogs Clients and Services, with a price</li>
+        <li>Document Order, listing services</li>
+        <li>Register Sales: client and service, amount</li>
+        <li>Listed what changes in the database, and applied it</li>
+        <li>Posted three orders</li>
+      </ul>
+      <table class="ledger">
+        <caption>Sales by month</caption>
+        <thead><tr><th>Month</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>September</td><td class="num">18,400</td></tr>
+          <tr><td>October</td><td class="num">23,900</td></tr>
+          <tr><td>November</td><td class="num">21,150</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">63,450</td></tr></tfoot>
+      </table>
+    </div>
+    <figcaption>The first request from
+      <a href="{{ site.repository_url }}/blob/develop/docs/public/ai-quickstart.md">Building an application with an assistant</a>; the amounts are made up.</figcaption>
+  </figure>
 </section>
 
-<figure class="sheet">
-  <div class="sheet-paper">
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">1</span> Describe</h2>
-      <div class="sheet-body">
-        <ul class="tree">
-          <li><span class="kind">Catalog</span> Products
-            <ul><li>Unit</li></ul></li>
-          <li><span class="kind">Accumulation register</span> Stock
-            <ul><li>Product <span class="kind">dimension</span></li><li>Quantity <span class="kind">resource</span></li></ul></li>
-          <li><span class="kind">Document</span> Receipt
-            <ul><li>Goods <span class="kind">table</span></li><li>Product, Quantity</li></ul></li>
-        </ul>
-      </div>
+<section class="section">
+  <h2>What it gives you</h2>
+  <div class="gains">
+    <div class="gain">
+      <h3>For implementers</h3>
+      <p>A consultant tells the assistant what used to go into a specification for a programmer. A solution is built
+        faster, with less work and fewer mistakes — and at a fixed price, the difference is yours.</p>
     </div>
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">2</span> Post</h2>
-      <div class="sheet-body">
+    <div class="gain">
+      <h3>For accountants and finance</h3>
+      <p>A change is checked with postings, balances and a trial balance, not with someone's word that it works. In the
+        workspace the assistant opens a report, finds a document or corrects a value — within your rights.</p>
+    </div>
+    <div class="gain">
+      <h3>For the owner</h3>
+      <p>The books change as the business does, without a queue for a programmer. The database is on your own server;
+        people work in the application on Windows, Linux and macOS, or in a browser, on a phone too.</p>
+    </div>
+  </div>
+  <p class="assure">The assistant works in plain sight: the studio shows each step it takes, it describes a change to
+    the database in the books' own words — “the document Order got an attribute” — and every call stays in the journal.</p>
+</section>
+
+<section class="section">
+  <h2>What it looks like</h2>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/gallery/#workspace' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A trial balance report"></a>
+      <figcaption>The workspace: a trial balance</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/gallery/#browser' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
+        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="A lots-on-hand report in a browser">
+      </picture></a>
+      <figcaption>In a browser: lots on hand — on a desktop and on a phone</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/gallery/#studio' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img loading="lazy" src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="A dashboard form in the studio">
+      </picture></a>
+      <figcaption>The studio: where an application is built — with the mouse or with the assistant</figcaption>
+    </figure>
+  </div>
+  <p class="teaser-more"><a href="{{ '/gallery/' | relative_url }}">All the screenshots are in the gallery</a></p>
+</section>
+
+<section class="section">
+  <h2>For developers</h2>
+  <p class="section-lead">Under the assistant is an ordinary platform in C++20, and whatever it does can be done by hand.
+    You describe the business in metadata, write its rules in a built-in language and read its data with queries and
+    reports. The platform makes the tables, the forms and the reports, and keeps the database in step as the
+    description changes.</p>
+
+  <figure class="sheet">
+    <div class="sheet-paper">
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">1</span> Describe</h3>
+        <div class="sheet-body">
+          <ul class="tree">
+            <li><span class="kind">Catalog</span> Products
+              <ul><li>Unit</li></ul></li>
+            <li><span class="kind">Accumulation register</span> Stock
+              <ul><li>Product <span class="kind">dimension</span></li><li>Quantity <span class="kind">resource</span></li></ul></li>
+            <li><span class="kind">Document</span> Receipt
+              <ul><li>Goods <span class="kind">table</span></li><li>Product, Quantity</li></ul></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">2</span> Post</h3>
+        <div class="sheet-body">
 <pre class="highlight"><code><span class="k">procedure</span> <span class="nf">Posting</span>(Cancel, PostingMode) {
     <span class="k">foreach</span> (row <span class="k">in</span> Goods) {
         <span class="k">var</span> rec = RegisterRecords.Stock.Add();
@@ -50,60 +132,34 @@ body_class: home
         rec.Quantity   = row.Quantity;
     }
 }</code></pre>
+        </div>
       </div>
-    </div>
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">3</span> Read</h2>
-      <div class="sheet-body">
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">3</span> Read</h3>
+        <div class="sheet-body">
 <pre class="highlight"><code><span class="k">SELECT</span> B.Product, B.QuantityBalance
 <span class="k">FROM</span> AccumulationRegister.Stock.Balance(&amp;At)
      <span class="k">AS</span> B</code></pre>
-        <table class="ledger">
-          <thead><tr><th>Product</th><th class="num">Quantity balance</th></tr></thead>
-          <tbody>
-            <tr><td>Nails 50 mm</td><td class="num">1,200</td></tr>
-            <tr><td>Wood screws 4×30</td><td class="num">850</td></tr>
-            <tr><td>Door hinges</td><td class="num">64</td></tr>
-          </tbody>
-          <tfoot><tr><td>Total</td><td class="num">2,114</td></tr></tfoot>
-        </table>
+          <table class="ledger">
+            <thead><tr><th>Product</th><th class="num">Quantity balance</th></tr></thead>
+            <tbody>
+              <tr><td>Nails 50 mm</td><td class="num">1,200</td></tr>
+              <tr><td>Wood screws 4×30</td><td class="num">850</td></tr>
+              <tr><td>Door hinges</td><td class="num">64</td></tr>
+            </tbody>
+            <tfoot><tr><td>Total</td><td class="num">2,114</td></tr></tfoot>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <figcaption class="sheet-caption">The tables behind Goods and Stock, the receipt's form and the list of receipts come
-    from the metadata — no SQL and no window code are written. <a href="{{ '/guide/first-steps/' | relative_url }}">First steps</a>
-    builds this application in about fifteen minutes.</figcaption>
-</figure>
+    <figcaption class="sheet-caption">The tables behind Goods and Stock, the receipt's form and the list of receipts come
+      from the metadata — no SQL and no window code are written. <a href="{{ '/guide/first-steps/' | relative_url }}">First steps</a>
+      builds this application in about fifteen minutes.</figcaption>
+  </figure>
 
-<section class="section">
-  <h2>What it looks like</h2>
-  <div class="teaser">
-    <figure class="shot">
-      <a href="{{ '/gallery/#studio' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
-        <img loading="lazy" src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="A dashboard form in the studio">
-      </picture></a>
-      <figcaption>The studio</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/gallery/#workspace' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="A trial balance report"></a>
-      <figcaption>The workspace</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/gallery/#browser' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
-        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="A lots-on-hand report in a browser">
-      </picture></a>
-      <figcaption>In a browser</figcaption>
-    </figure>
-  </div>
-  <p class="teaser-more"><a href="{{ '/gallery/' | relative_url }}">All the screenshots are in the gallery</a></p>
-</section>
-
-<section class="section">
-  <h2>What is inside</h2>
+  <h3 class="sub">What is inside</h3>
   <dl class="inside">
-    <div><dt>An assistant at work</dt><dd>A built-in MCP server: an AI assistant reads, builds and checks an application through the same doors as the developer, and every call is journalled.</dd></div>
+    <div><dt>An assistant at work</dt><dd>A built-in MCP server: an AI assistant reads, builds and checks an application with the rights of the person who let it in, and every call is journalled.</dd></div>
     <div><dt>Registers</dt><dd>Information, accumulation, accounting — a chart of accounts and double entry — and calculation for payroll.</dd></div>
     <div><dt>Query language</dt><dd>SELECT over business objects and the registers' balances and turnovers. It runs as SQL on the server, or in memory with the same answer.</dd></div>
     <div><dt>Report composer</dt><dd>Groupings, totals, cross tables, drill-down to the records, and each user's saved settings. Prints, and exports to Excel and Word.</dd></div>

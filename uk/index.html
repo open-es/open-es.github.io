@@ -8,38 +8,120 @@ permalink: /uk/
 body_class: home
 ---
 <section class="hero">
-  <h1>Опишіть бізнес. Проведіть документи. Отримайте звіти.</h1>
-  <p class="lead">OpenES — платформа для бізнес-застосунків<a class="fn-ref" href="#fn-erp" aria-label="Виноска">*</a>: склад, бухгалтерія, зарплата, продажі. Написана на C++20.
-    Бізнес описують метаданими, його правила — вбудованою мовою, дані читають запитами та звітами. Таблиці, форми й
-    звіти платформа створює сама і перебудовує базу даних, коли опис змінюється.</p>
-  <p class="more">Студія, де застосунок будують, робоче місце й браузер, де в ньому працюють, сервер застосунків —
-    і вбудований MCP-сервер: ШІ-асистент будує й перевіряє застосунок тими самими дверима, що й розробник.</p>
-  <div class="actions">
-    <a class="btn btn-main" href="{{ site.releases_url }}">Завантажити</a>
-    <a class="btn" href="{{ site.demo_url }}">Відкрити демо</a>
-    <a class="btn" href="{{ '/uk/guide/first-steps/' | relative_url }}">Перші кроки</a>
-    <p class="note">Windows, Linux і macOS; для демо досить браузера</p>
+  <div class="hero-text">
+    <h1>Знаєте облік — змінюйте систему самі.</h1>
+    <p class="lead">OpenES — платформа для бізнес-застосунків<a class="fn-ref" href="#fn-erp" aria-label="Виноска">*</a>: склад, бухгалтерія, зарплата, продажі.
+      ШІ-асистент підключається до неї напряму: скажіть йому словами, що треба вести і що бачити, — він збере
+      довідники, документи, проведення і звіти. Без постановки задачі програмістові й без черги до нього.</p>
+    <p class="more">Перевіряєте ви так, як звикли: проведеним документом, оборотно-сальдовою відомістю, друкованою формою.</p>
+    <div class="actions">
+      <a class="btn btn-main" href="{{ site.demo_url }}">Відкрити демо</a>
+      <a class="btn" href="{{ site.releases_url }}">Завантажити</a>
+      <a class="btn" href="{{ '/uk/guide/first-steps/' | relative_url }}">Перші кроки</a>
+      <p class="note">Демо відкривається в браузері, без встановлення. Платформа — для Windows, Linux і macOS.</p>
+    </div>
   </div>
+
+  <figure class="talk">
+    <div class="talk-paper">
+      <p class="talk-head">Асистент у студії</p>
+      <p class="talk-ask">Зроби облік для невеликої сервісної компанії: клієнти, послуги з ціною, замовлення зі списком
+        послуг і продажі за клієнтами та послугами. Застосуй, проведи три замовлення і покажи продажі по місяцях.</p>
+      <ul class="talk-done">
+        <li>Довідники «Клієнти» і «Послуги» з ціною</li>
+        <li>Документ «Замовлення» зі списком послуг</li>
+        <li>Регістр «Продажі»: клієнт і послуга, сума</li>
+        <li>Показав, що зміниться в базі, і застосував</li>
+        <li>Провів три замовлення</li>
+      </ul>
+      <table class="ledger">
+        <caption>Продажі по місяцях</caption>
+        <thead><tr><th>Місяць</th><th class="num">Сума</th></tr></thead>
+        <tbody>
+          <tr><td>Вересень</td><td class="num">18&nbsp;400</td></tr>
+          <tr><td>Жовтень</td><td class="num">23&nbsp;900</td></tr>
+          <tr><td>Листопад</td><td class="num">21&nbsp;150</td></tr>
+        </tbody>
+        <tfoot><tr><td>Разом</td><td class="num">63&nbsp;450</td></tr></tfoot>
+      </table>
+    </div>
+    <figcaption>Перший запит із посібника
+      <a href="{{ site.repository_url }}/blob/develop/docs/public/ai-quickstart.md">«Застосунок з асистентом»</a>; суми — для прикладу.</figcaption>
+  </figure>
 </section>
 
-<figure class="sheet">
-  <div class="sheet-paper">
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">1</span> Описати</h2>
-      <div class="sheet-body">
-        <ul class="tree">
-          <li><span class="kind">Довідник</span> Products
-            <ul><li>Unit</li></ul></li>
-          <li><span class="kind">Регістр накопичення</span> Stock
-            <ul><li>Product <span class="kind">вимір</span></li><li>Quantity <span class="kind">ресурс</span></li></ul></li>
-          <li><span class="kind">Документ</span> Receipt
-            <ul><li>Goods <span class="kind">таблиця</span></li><li>Product, Quantity</li></ul></li>
-        </ul>
-      </div>
+<section class="section">
+  <h2>Що це дає</h2>
+  <div class="gains">
+    <div class="gain">
+      <h3>Впроваджувачу</h3>
+      <p>Консультант каже асистентові те, що раніше писав програмістові в постановці задачі. Рішення збирається
+        швидше, роботи й помилок менше, а за фіксованої ціни виграш залишається у вас.</p>
     </div>
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">2</span> Провести</h2>
-      <div class="sheet-body">
+    <div class="gain">
+      <h3>Бухгалтеру і фінансисту</h3>
+      <p>Зміну перевіряють проведеннями, залишками й оборотно-сальдовою відомістю, а не словами «усе працює».
+        У робочому місці асистент відкриє звіт, знайде документ або виправить значення — в межах ваших прав.</p>
+    </div>
+    <div class="gain">
+      <h3>Власнику бізнесу</h3>
+      <p>Облік змінюється разом із бізнесом, без черги до програміста. База — на вашому сервері; працювати можна в
+        програмі на Windows, Linux і macOS або в браузері, зокрема з телефона.</p>
+    </div>
+  </div>
+  <p class="assure">Асистент працює у вас на очах: студія показує кожен його крок, зміни бази він описує словами
+    обліку — наприклад, «документ Замовлення отримав реквізит», — а кожен виклик лишається в журналі.</p>
+</section>
+
+<section class="section">
+  <h2>Як це виглядає</h2>
+  <div class="shots">
+    <figure class="shot shot-main">
+      <a href="{{ '/uk/gallery/#workspace' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдова відомість"></a>
+      <figcaption>Робоче місце: оборотно-сальдова відомість</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/uk/gallery/#browser' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
+        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="Звіт про залишки партій у браузері">
+      </picture></a>
+      <figcaption>У браузері: залишки партій — на комп'ютері й телефоні</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="{{ '/uk/gallery/#studio' | relative_url }}"><picture>
+        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
+        <img loading="lazy" src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="Форма панелі в студії">
+      </picture></a>
+      <figcaption>Студія: тут застосунок будують — мишею або з асистентом</figcaption>
+    </figure>
+  </div>
+  <p class="teaser-more"><a href="{{ '/uk/gallery/' | relative_url }}">Усі знімки — у галереї</a></p>
+</section>
+
+<section class="section">
+  <h2>Для розробників</h2>
+  <p class="section-lead">Під асистентом — звичайна платформа на C++20, і все, що він робить, можна зробити руками.
+    Застосунок описують метаданими, правила пишуть вбудованою мовою, дані читають запитами та звітами. Таблиці, форми й
+    звіти платформа створює сама і перебудовує базу даних, коли опис змінюється.</p>
+
+  <figure class="sheet">
+    <div class="sheet-paper">
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">1</span> Описати</h3>
+        <div class="sheet-body">
+          <ul class="tree">
+            <li><span class="kind">Довідник</span> Products
+              <ul><li>Unit</li></ul></li>
+            <li><span class="kind">Регістр накопичення</span> Stock
+              <ul><li>Product <span class="kind">вимір</span></li><li>Quantity <span class="kind">ресурс</span></li></ul></li>
+            <li><span class="kind">Документ</span> Receipt
+              <ul><li>Goods <span class="kind">таблиця</span></li><li>Product, Quantity</li></ul></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">2</span> Провести</h3>
+        <div class="sheet-body">
 <pre class="highlight"><code><span class="k">procedure</span> <span class="nf">Posting</span>(Cancel, PostingMode) {
     <span class="k">foreach</span> (row <span class="k">in</span> Goods) {
         <span class="k">var</span> rec = RegisterRecords.Stock.Add();
@@ -49,60 +131,34 @@ body_class: home
         rec.Quantity   = row.Quantity;
     }
 }</code></pre>
+        </div>
       </div>
-    </div>
-    <div class="sheet-col">
-      <h2 class="sheet-head"><span class="step">3</span> Прочитати</h2>
-      <div class="sheet-body">
+      <div class="sheet-col">
+        <h3 class="sheet-head"><span class="step">3</span> Прочитати</h3>
+        <div class="sheet-body">
 <pre class="highlight"><code><span class="k">SELECT</span> B.Product, B.QuantityBalance
 <span class="k">FROM</span> AccumulationRegister.Stock.Balance(&amp;At)
      <span class="k">AS</span> B</code></pre>
-        <table class="ledger">
-          <thead><tr><th>Товар</th><th class="num">Залишок</th></tr></thead>
-          <tbody>
-            <tr><td>Цвяхи 50 мм</td><td class="num">1&nbsp;200</td></tr>
-            <tr><td>Шурупи 4×30</td><td class="num">850</td></tr>
-            <tr><td>Петлі дверні</td><td class="num">64</td></tr>
-          </tbody>
-          <tfoot><tr><td>Разом</td><td class="num">2&nbsp;114</td></tr></tfoot>
-        </table>
+          <table class="ledger">
+            <thead><tr><th>Товар</th><th class="num">Залишок</th></tr></thead>
+            <tbody>
+              <tr><td>Цвяхи 50 мм</td><td class="num">1&nbsp;200</td></tr>
+              <tr><td>Шурупи 4×30</td><td class="num">850</td></tr>
+              <tr><td>Петлі дверні</td><td class="num">64</td></tr>
+            </tbody>
+            <tfoot><tr><td>Разом</td><td class="num">2&nbsp;114</td></tr></tfoot>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <figcaption class="sheet-caption">Таблиці для Goods і Stock, форма надходження та список надходжень беруться з
-    метаданих — ні SQL, ні коду вікон писати не треба. <a href="{{ '/uk/guide/first-steps/' | relative_url }}">Перші кроки</a>
-    збирають цей застосунок приблизно за п'ятнадцять хвилин.</figcaption>
-</figure>
+    <figcaption class="sheet-caption">Таблиці для Goods і Stock, форма надходження та список надходжень беруться з
+      метаданих — ні SQL, ні коду вікон писати не треба. <a href="{{ '/uk/guide/first-steps/' | relative_url }}">Перші кроки</a>
+      збирають цей застосунок приблизно за п'ятнадцять хвилин.</figcaption>
+  </figure>
 
-<section class="section">
-  <h2>Як це виглядає</h2>
-  <div class="teaser">
-    <figure class="shot">
-      <a href="{{ '/uk/gallery/#studio' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/studio-dashboard-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1919" height="1032">
-        <img loading="lazy" src="{{ '/assets/img/studio-dashboard-light.png' | relative_url }}" width="1919" height="1030" alt="Форма панелі в студії">
-      </picture></a>
-      <figcaption>Студія</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/uk/gallery/#workspace' | relative_url }}"><img src="{{ '/assets/img/workspace-trial-balance.png' | relative_url }}" width="1919" height="1032" loading="lazy" alt="Оборотно-сальдова відомість"></a>
-      <figcaption>Робоче місце</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="{{ '/uk/gallery/#browser' | relative_url }}"><picture>
-        <source srcset="{{ '/assets/img/web-lots-fifo-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)" width="1870" height="915">
-        <img src="{{ '/assets/img/web-lots-fifo-light.png' | relative_url }}" width="1869" height="912" loading="lazy" alt="Звіт про залишки партій у браузері">
-      </picture></a>
-      <figcaption>У браузері</figcaption>
-    </figure>
-  </div>
-  <p class="teaser-more"><a href="{{ '/uk/gallery/' | relative_url }}">Усі знімки — у галереї</a></p>
-</section>
-
-<section class="section">
-  <h2>Що всередині</h2>
+  <h3 class="sub">Що всередині</h3>
   <dl class="inside">
-    <div><dt>Асистент у роботі</dt><dd>Вбудований MCP-сервер: ШІ-асистент читає, будує й перевіряє застосунок тими самими дверима, що й розробник, і кожен виклик потрапляє в журнал.</dd></div>
+    <div><dt>Асистент у роботі</dt><dd>Вбудований MCP-сервер: ШІ-асистент читає, будує й перевіряє застосунок із правами людини, яка дала йому доступ, і кожен виклик потрапляє в журнал.</dd></div>
     <div><dt>Регістри</dt><dd>Відомостей, накопичення, бухгалтерії — план рахунків і подвійний запис — і розрахунку для зарплати.</dd></div>
     <div><dt>Мова запитів</dt><dd>SELECT за бізнес-об'єктами, залишками й оборотами регістрів. Виконується як SQL на сервері або в пам'яті — з тією самою відповіддю.</dd></div>
     <div><dt>Компонувальник звітів</dt><dd>Групування, підсумки, крос-таблиці, розшифрування до записів і збережені налаштування кожного користувача. Друк і вивантаження в Excel і Word.</dd></div>
