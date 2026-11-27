@@ -215,6 +215,23 @@ a:hover { text-decoration-thickness: 2px; }
 .assure { max-width: 46rem; margin: 1.75rem 0 0; padding-left: 1rem; border-left: 3px double var(--red); }
 @media (max-width: 52em) { .gains, .gains.three { grid-template-columns: minmax(0, 1fr); } }
 
+/* ---- home: Excel beside OpenES, row by row, on a ledger page ---- */
+
+.versus-paper {
+  position: relative;
+  padding: .35rem 1.25rem .5rem 2.25rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule-strong);
+  box-shadow: var(--shadow);
+}
+.versus { width: 100%; border-collapse: collapse; }
+.versus th { text-align: left; font: 600 .8125rem/1.4 var(--sans); color: var(--ink-2); padding: .55rem 1rem .55rem 0; border-bottom: 1px solid var(--ink); }
+.versus td { padding: .7rem 1rem .7rem 0; vertical-align: top; line-height: 1.5; border-bottom: 1px solid var(--rule-faint); }
+.versus td:first-child { width: 46%; color: var(--ink-2); }
+.versus th + th, .versus td + td { padding-left: 1rem; box-shadow: inset 1px 0 0 var(--rule); }
+.versus tbody tr:last-child td { border-bottom: 0; }
+@media (max-width: 44em) { .versus { font-size: .9375rem; } }
+
 /* ---- home: the way up — alone, together, a server, a cluster; the same application on every step ---- */
 
 .path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
@@ -247,9 +264,10 @@ a:hover { text-decoration-thickness: 2px; }
   border: 1px solid var(--rule-strong);
   box-shadow: var(--shadow);
 }
-/* the red double rule down the margin of a ledger page: the sheet's, and the assistant's request's */
+/* the red double rule down the margin of a ledger page: the sheet's, the assistant's request's, Excel beside OpenES */
 .sheet-paper::before,
-.talk-paper::before {
+.talk-paper::before,
+.versus-paper::before {
   content: "";
   position: absolute;
   top: 0;
