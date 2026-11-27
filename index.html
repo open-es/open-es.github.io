@@ -51,26 +51,99 @@ body_class: home
 </section>
 
 <section class="section">
-  <h2>What it gives you</h2>
+  <h2>What it gives each of you</h2>
   <div class="gains">
     <div class="gain">
-      <h3>For implementers</h3>
-      <p>A consultant tells the assistant what used to go into a specification for a programmer. A solution is built
-        faster, with less work and fewer mistakes — and at a fixed price, the difference is yours.</p>
-    </div>
-    <div class="gain">
-      <h3>For accountants and finance</h3>
-      <p>A change is checked with postings, balances and a trial balance, not with someone's word that it works. In the
-        workspace the assistant opens a report, finds a document or corrects a value — within your rights.</p>
-    </div>
-    <div class="gain">
       <h3>For the owner</h3>
-      <p>The books change as the business does, without a queue for a programmer. The database is on your own server;
-        people work in the application on Windows, Linux and macOS, or in a browser, on a phone too.</p>
+      <ul>
+        <li>The whole company in one base: stock, settlements, accounting, payroll — and several companies side by side.</li>
+        <li>The books change as the business does, without a queue for a programmer.</li>
+        <li>The database is on your own server, or right on your own computer; look at it from a browser, on a phone too.</li>
+      </ul>
+    </div>
+    <div class="gain">
+      <h3>For the accountant</h3>
+      <ul>
+        <li>Double entry over a chart of accounts with account dimensions; Anglo-Saxon and continental books agree to the cent.</li>
+        <li>Trial balance, general ledger, drill-down to the entry.</li>
+        <li>Payroll: salary, bonus, sick leave, income tax, recalculation of past periods and the payroll sheet.</li>
+        <li>In the workspace the assistant opens a report, finds a document or corrects a value — within your rights.</li>
+      </ul>
+    </div>
+    <div class="gain">
+      <h3>For the economist and finance</h3>
+      <ul>
+        <li>Balances and turnovers at any date, FIFO lots and cost; documents repost from the point they need to.</li>
+        <li>Prices and exchange rates at any date.</li>
+        <li>Reports are put together with the mouse: groupings, totals, cross tables, your own saved variants.</li>
+        <li>Export to Excel, Word and PDF, sending by mail.</li>
+      </ul>
+    </div>
+    <div class="gain">
+      <h3>For implementers</h3>
+      <ul>
+        <li>A consultant tells the assistant what used to go into a specification for a programmer.</li>
+        <li>A solution is built faster, with less work and fewer mistakes — and at a fixed price, the difference is yours.</li>
+        <li>The mechanisms combine in one base: one goods receipt posts to stock, to lots and to each chart of accounts.</li>
+        <li>HTTP services for exchange with a website and other systems; scheduled and background jobs.</li>
+      </ul>
     </div>
   </div>
   <p class="assure">The assistant works in plain sight: the studio shows each step it takes, it describes a change to
     the database in the books' own words — “the document Order got an attribute” — and every call stays in the journal.</p>
+</section>
+
+<section class="section">
+  <h2>Complex accounting — in one base</h2>
+  <p class="section-lead">Accounting, payroll and stock here are the platform's own mechanisms, not workarounds:
+    accounting, calculation, accumulation and information registers. That is why they combine, and there is no separate
+    product for each task. That sick leave displaces salary, and that salary is the base of a bonus, the calculation
+    register knows itself, not code around it.</p>
+  <h3 class="sub">A query asks the books in their own words</h3>
+  <p class="section-lead">The query language is half bookkeeping: it has balances and turnovers, receipt and expense,
+    turnovers between accounts, prices at a date and accruals for a period. An accountant reads such a query almost as a
+    sentence, and the platform turns it into SQL for the server itself. The rules — how a document posts, how an accrual
+    is figured — are written in the built-in language in the same words: document, register, balance.</p>
+  <figure class="sheet">
+    <div class="sheet-paper two">
+      <div class="sheet-col">
+        <h4 class="sheet-head"><span class="step">1</span> Ask</h4>
+        <div class="sheet-body">
+<pre class="highlight"><code><span class="k">SELECT</span> T.Warehouse, T.Product,
+       T.QuantityOpeningBalance, T.QuantityReceipt,
+       T.QuantityExpense, T.QuantityClosingBalance
+<span class="k">FROM</span> AccumulationRegister.Stock.BalanceAndTurnovers(&amp;From, &amp;To) <span class="k">AS</span> T
+<span class="k">TOTALS</span> <span class="k">SUM</span>(QuantityClosingBalance) <span class="k">BY</span> Warehouse</code></pre>
+        </div>
+      </div>
+      <div class="sheet-col">
+        <h4 class="sheet-head"><span class="step">2</span> Get</h4>
+        <div class="sheet-body">
+          <table class="ledger grouped">
+            <thead><tr><th>Warehouse, product</th><th class="num">Opening</th><th class="num">Receipt</th><th class="num">Expense</th><th class="num">Closing</th></tr></thead>
+            <tbody>
+              <tr class="grp"><td>Main warehouse</td><td></td><td></td><td></td><td class="num">1,450</td></tr>
+              <tr><td>Nails 50 mm</td><td class="num">1,000</td><td class="num">500</td><td class="num">300</td><td class="num">1,200</td></tr>
+              <tr><td>Wood screws 4×30</td><td class="num">200</td><td class="num">100</td><td class="num">50</td><td class="num">250</td></tr>
+              <tr class="grp"><td>Shop</td><td></td><td></td><td></td><td class="num">64</td></tr>
+              <tr><td>Door hinges</td><td class="num">70</td><td class="num">0</td><td class="num">6</td><td class="num">64</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <figcaption class="sheet-caption">The same language asks for turnovers between accounts (<code>DrCrTurnovers</code>), a
+      price at a date (<code>SliceLast</code>) and the actual period of an accrual (<code>ActualActionPeriod</code>).
+      Groupings, totals and drill-down a user then does with the mouse, in the report composer.</figcaption>
+  </figure>
+
+  <h3 class="sub">Runs on your own computer</h3>
+  <p class="section-lead">Download the archive for Windows, Linux or macOS and unpack it: the database engine is inside,
+    there is no server to install. Add a folder on disk in the launcher, and the base is ready. A file base is enough to
+    develop in and for a small office; a team takes PostgreSQL and the application server.
+    <a href="{{ '/guide/installation/' | relative_url }}">Installation</a></p>
+  <p class="section-lead">Everything above can be seen first in the <a href="{{ site.demo_url }}">demo</a>: trading,
+    payroll and accounting on made-up data, right in a browser.</p>
 </section>
 
 <section class="section">
@@ -169,6 +242,16 @@ body_class: home
     <div><dt>Server and cluster</dt><dd>A server process per base; the cluster restarts one that falls, and the other bases do not notice. Firebird and PostgreSQL.</dd></div>
     <div><dt>Browser</dt><dd>The same application in a browser, on a desktop and on a phone. The server holds the session; the client only draws.</dd></div>
   </dl>
+
+  <h3 class="sub">Why C++, and everything its own</h3>
+  <p class="section-lead">An accounting system lives for decades — longer than fashionable frameworks. So OpenES stands
+    on no one else's runtime: it needs no .NET, no Java, no Node, no Python. The language's compiler and its bytecode, the
+    query engine, the network protocol, the storage format, exact decimal arithmetic — all its own, in one source tree;
+    the interface runs on its own branch of wxWidgets in that same tree, and the little that is third-party lives there
+    too and ships in the package. One code base builds with MSVC, GCC and Apple Clang and passes the same tests on
+    Windows, Linux and macOS.</p>
+  <p class="section-lead">The reckoning is simple: a program that has everything of its own will start in ten years just
+    as it does today — it does not need anyone else to keep its foundation alive.</p>
 </section>
 
 <section class="section licence">

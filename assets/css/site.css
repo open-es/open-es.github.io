@@ -1,31 +1,31 @@
-/* OES site. The page is a bookkeeping sheet: blue ruling, blue-black ink, red ink for the margin and the total. */
+/* OES site. The page is a bookkeeping sheet: black ink on white, red ink for the margin and the total, the logo's
+   yellow for a highlighter. A link is the ink, underlined. */
 
 :root {
-  --paper: #f6f8fb;
-  --grid: rgba(47, 110, 196, .06);
-  --glow: rgba(110, 175, 255, .34);
+  --paper: #fafafa;
+  --grid: rgba(0, 0, 0, .045);
   --sheet: #ffffff;
-  --ink: #13233a;
-  --ink-2: #3d4c61;
-  --rule: #c9d7e8;
-  --rule-faint: #e3eaf3;
-  --rule-strong: #8fa8c6;
+  --ink: #111111;
+  --ink-2: #4d4d4d;
+  --rule: #dcdcdc;
+  --rule-faint: #eeeeee;
+  --rule-strong: #a8a8a8;
   --red: #c33a2e;
-  --link: #1a5aa6;
-  --accent: #1d5fbf;                  /* the main button */
+  --link: #111111;
+  --accent: #111111;                  /* the main button */
   --on-accent: #ffffff;
   --ok: #2d7550;                      /* a step the assistant has done */
-  --tint: #e6eefa;
+  --tint: #f1f1f1;
   --sun: #fee800;                     /* the logo's yellow */
-  --sun-ink: #13233a;                 /* what is written on it, in either look */
+  --sun-ink: #111111;                 /* what is written on it, in either look */
   --sun-ring: rgba(112, 181, 222, .7); /* the logo's sky-blue ring */
   --marker: rgba(254, 232, 0, .5);    /* a highlighter over a total */
-  --tok-kw: #1a5aa6;
+  --tok-kw: #8a2a20;
   --tok-str: #2d7550;
   --tok-num: #9a4a14;
-  --tok-com: #66768a;
-  --shadow: 0 1px 0 rgba(19, 35, 58, .05), 0 18px 40px -24px rgba(19, 35, 58, .45);
-  --frame: #1d2128;
+  --tok-com: #6b6b6b;
+  --shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 18px 40px -24px rgba(0, 0, 0, .35);
+  --frame: #1d1d1d;
 
   --serif: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
   --sans: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
@@ -38,28 +38,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0c1626;
-    --grid: rgba(139, 186, 242, .05);
-    --glow: rgba(70, 130, 235, .34);
-    --sheet: #12213a;
-    --ink: #e6edf7;
-    --ink-2: #b3c2d5;
-    --rule: #27405f;
-    --rule-faint: #1a2d4a;
-    --rule-strong: #46658f;
+    --paper: #0f0f0f;
+    --grid: rgba(255, 255, 255, .04);
+    --sheet: #181818;
+    --ink: #ededed;
+    --ink-2: #a8a8a8;
+    --rule: #2e2e2e;
+    --rule-faint: #222222;
+    --rule-strong: #4d4d4d;
     --red: #e8786a;
-    --link: #8fc0f6;
-    --accent: #3d7fe0;
-    --on-accent: #ffffff;
+    --link: #ededed;
+    --accent: #ededed;
+    --on-accent: #111111;
     --ok: #8fd0a8;
-    --tint: #182c4b;
+    --tint: #222222;
     --marker: rgba(254, 232, 0, .85);
-    --tok-kw: #8bbaf2;
+    --tok-kw: #f0a39a;
     --tok-str: #8fd0a8;
     --tok-num: #e8a56f;
-    --tok-com: #7f93aa;
+    --tok-com: #8a8a8a;
     --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 18px 40px -24px rgba(0, 0, 0, .8);
-    --frame: #05080c;
+    --frame: #050505;
   }
 }
 
@@ -130,16 +129,6 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---- home: the opening ---- */
 
-/* daylight over the top of the home page, above the squared paper */
-body.page-home {
-  background-image:
-    radial-gradient(64rem 34rem at 82% -6rem, var(--glow), transparent 72%),
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: auto, 24px 24px, 24px 24px;
-  background-repeat: no-repeat, repeat, repeat;
-}
-
 /* the promise on the left, the assistant's first request and what it built on the right */
 .hero {
   max-width: var(--wide);
@@ -169,7 +158,7 @@ body.page-home {
   text-decoration: none;
   color: var(--ink);
 }
-.btn:hover { border-color: var(--link); color: var(--link); }
+.btn:hover { background: var(--tint); }
 .btn-main { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .btn-main:hover { background: var(--sun); border-color: var(--sun); color: var(--sun-ink); }
 .actions .note { flex-basis: 100%; margin: 0; font-size: .9375rem; color: var(--ink-2); }
@@ -201,9 +190,9 @@ body.page-home {
 .talk .ledger caption { text-align: left; font-weight: 600; padding-bottom: .3rem; }
 .talk figcaption { margin-top: .65rem; font-size: .875rem; color: var(--ink-2); }
 
-/* ---- home: what it gives each of the three who decide ---- */
+/* ---- home: what it gives each who reads it — the owner, the accountant, the economist, the implementer ---- */
 
-.gains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.gains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .gain {
   padding: 1.1rem 1.35rem 1.25rem;
   background: var(--sheet);
@@ -212,7 +201,8 @@ body.page-home {
   box-shadow: var(--shadow);
 }
 .gain h3 { font: 600 1.25rem/1.3 var(--serif); margin: 0 0 .5rem; }
-.gain p { margin: 0; line-height: 1.55; }
+.gain ul { margin: 0; padding-left: 1.1rem; line-height: 1.55; }
+.gain li + li { margin-top: .4rem; }
 /* the margin's red double rule beside the sentence that answers "what if it does something wrong" */
 .assure { max-width: 46rem; margin: 1.75rem 0 0; padding-left: 1rem; border-left: 3px double var(--red); }
 @media (max-width: 52em) { .gains { grid-template-columns: minmax(0, 1fr); } }
@@ -245,6 +235,8 @@ body.page-home {
   opacity: .7;
   pointer-events: none;
 }
+/* two columns: a query on the left, its answer on the right */
+.sheet-paper.two { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
 .sheet-col { min-width: 0; padding-bottom: var(--step); }
 .sheet-col + .sheet-col { box-shadow: inset 1px 0 0 var(--rule); }
 .sheet-head {
@@ -300,7 +292,18 @@ body.page-home {
   /* the total, gone over with a highlighter */
   background: linear-gradient(to bottom, transparent 4px, var(--marker) 4px, var(--marker) calc(100% - 2px), transparent calc(100% - 2px));
 }
+/* an answer with totals by a grouping: the group's row carries the total, its rows stand indented under it */
+.ledger.grouped tbody .grp td { font-weight: 600; box-shadow: inset 0 1px 0 var(--rule); }
+.ledger.grouped tbody tr:not(.grp) td:first-child { padding-left: 1rem; }
+.ledger.grouped th, .ledger.grouped .num { white-space: nowrap; }
+.ledger.grouped .num { padding-left: .6rem; }
+.sheet-body:has(> .ledger.grouped) { overflow-x: auto; }
+@media (max-width: 44em) {
+  .ledger.grouped { font-size: .75rem; }
+  .ledger.grouped .num { padding-left: .4rem; }
+}
 .sheet-caption { max-width: 46rem; margin: 1rem 0 0; color: var(--ink-2); font-size: .9375rem; }
+.sheet-caption code { font: 400 .875em/1 var(--mono); }
 
 @media (max-width: 68em) {
   .sheet-paper { grid-template-columns: 1fr 1.7fr; }
@@ -309,7 +312,7 @@ body.page-home {
   .sheet-col:nth-child(3) .sheet-body { padding-left: 2.25rem; }
 }
 @media (max-width: 44em) {
-  .sheet-paper { grid-template-columns: minmax(0, 1fr); }
+  .sheet-paper, .sheet-paper.two { grid-template-columns: minmax(0, 1fr); }
   .sheet-col + .sheet-col { box-shadow: inset 0 1px 0 var(--rule); }
   .sheet-col .sheet-head, .sheet-col .sheet-body { padding-left: 2.25rem; padding-right: 1rem; }
 }
@@ -389,7 +392,7 @@ body.page-home {
   border-left: 2px solid var(--rule-faint);
 }
 .toc .n { color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.toc a:hover { color: var(--link); }
+.toc a:hover { color: var(--link); text-decoration: underline; }
 .toc a[aria-current] { border-left-color: var(--red); font-weight: 600; }
 .toc a[aria-current] .n {
   display: inline-grid;
